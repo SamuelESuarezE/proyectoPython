@@ -1,0 +1,30 @@
+{
+    "campers": [
+        {
+            "ID": "1127961146",
+            "Nombres": "Samuel Enrique",
+            "Apellidos": "Suarez Estupi\u00f1an",
+            "Direccion": "Conjunto Monteverdi Torre 5 Apto 601",
+            "Acudiente": {
+                "Nombre": "Jorge Suarez",
+                "ID": "72838723"
+            },
+            "Celular": "3185695249",
+            "Telefono_Fijo": "",
+            "Estado": "Preinscrito"
+        },
+        {
+            "ID": "1232121321",
+            "Nombres": "Mariana Traslavi\u00f1a",
+            "Apellidos": "TRaslavi\u00f1a Sarmiento",
+            "Direccion": "2132131",
+            "Acudiente": {
+                "Nombre": "213312",
+                "ID": "2131"
+            },
+            "Celular": "",
+            "Telefono_Fijo": "",
+            "Estado": "Preinscrito"
+        }
+    ]
+}

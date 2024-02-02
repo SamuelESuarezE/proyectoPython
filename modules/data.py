@@ -1,2 +1,1 @@
-campersData = []
-trainersData = []
+baseDeDatos = {}
