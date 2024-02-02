@@ -17,10 +17,25 @@
             "ID": "1232121321",
             "Nombres": "Mariana Traslavi\u00f1a",
             "Apellidos": "TRaslavi\u00f1a Sarmiento",
-            "Direccion": "2132131",
+            "Direccion": "Calle 112 #35-48",
             "Acudiente": {
-                "Nombre": "213312",
-                "ID": "2131"
+                "Nombre": "Elba Sarmiento",
+                "ID": "1234"
+            },
+            "Celular": "12345",
+            "Telefono_Fijo": "123455",
+            "Estado": "Preinscrito",
+            "Nombre": "Mariana",
+            "Apellido": "Traslavi\u00f1a Sarmiento"
+        },
+        {
+            "ID": "",
+            "Nombres": "",
+            "Apellidos": "",
+            "Direccion": "",
+            "Acudiente": {
+                "Nombre": "",
+                "ID": ""
             },
             "Celular": "",
             "Telefono_Fijo": "",

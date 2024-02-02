@@ -25,11 +25,9 @@ def menu():
             case 2:
                 system("clear")
                 search()
-                # TODO: This should let me see the list of campers
             case 3:
                 system("clear")
-                print("\nEditar Camper")
-                # TODO: This should let me edit a camper
+                edit()
             case 4:
                 system("clear")
                 print("\nEliminar Camper")
@@ -61,7 +59,6 @@ def save():
         "Estado": "Preinscrito"
     }
 
-    print(baseDeDatos)
     campersList.append(info)
     baseDeDatos['campers']=campersList
 
@@ -77,8 +74,9 @@ def search():
     |           LISTA DE CAMPERS            |
     |_______________________________________|
     """)
-    for camp in campersList:
+    for i, camp in enumerate(campersList):
         print(f"""
+        Codigo: {i}
         ID: {camp.get("ID")}
         Nombres: {camp.get("Nombres")}
         Apellidos: {camp.get("Apellidos")}
@@ -88,12 +86,60 @@ def search():
         Celular: {camp.get("Celular")}
         Telefono fijo: {camp.get("Telefono_Fijo")}
         Estado: {camp.get("Estado")}
-
         """)
 
 def edit():
-    print(3)
+    while True:
+        print("""     _______________________________________
+        |                                       |
+        |           EDITAR UN CAMPER            |
+        |_______________________________________|
+        """)
+        
+        cod = int(input("Ingrese el codigo del camper que desea editar: "))
 
+        try:
+            print(f"""
+            ID: {campersList[cod].get("ID")}
+            Nombres: {campersList[cod].get("Nombres")}
+            Apellidos: {campersList[cod].get("Apellidos")}
+            Direccion: {campersList[cod].get("Direccion")}
+            Acudiente: {campersList[cod].get("Acudiente").get("Nombre")}
+            ID Acudiente: {campersList[cod].get("Acudiente").get("ID")}
+            Celular: {campersList[cod].get("Celular")}
+            Telefono fijo: {campersList[cod].get("Telefono_Fijo")}
+            Estado: {campersList[cod].get("Estado")}
+            """)
+            print("¿Esta seguro que este es el camper que desea editar?\n\t1. Si\n\t2. No\n\t0. Salir")
+            opc = int(input())
+
+            match(opc):
+                case 1:
+                    system("clear")
+                    campersList[cod]["Nombre"] = input("Nombres: ")
+                    campersList[cod]["Apellido"] = input("Apellidos: ")
+                    campersList[cod]["Direccion"] = input("Direccion: ")
+                    campersList[cod]["Acudiente"]["Nombre"] = input("(Acudiente) Nombre completo: ")
+                    campersList[cod]["Acudiente"]["ID"] = input("(Acudiente) N° de identificacion: ")
+                    campersList[cod]["Celular"] = input("Celular: ")
+                    campersList[cod]["Telefono_Fijo"] = input("Telefono fijo: ")
+                    campersList[cod]["Estado"] = "Preinscrito"
+
+                    with open("modules/storage/data.json", "w") as f:
+                        data = json.dumps(baseDeDatos, indent=4)
+                        f.write(data)
+                    system("clear")
+                    print("Camper editado.")
+                    break
+                case 2:
+                    system("clear")
+                case 0:
+                    system("clear")
+                    break
+
+        except IndexError:
+            system("clear")
+            print("Error: Camper no encontrado.")
+    
 def delete():
-    print(4)
-
+    print("Deleting")
