@@ -7,7 +7,7 @@ while True:
 
     print("""     _______________________________________
     |                                       |
-    |   CRUM de Departamento Academico      |
+    |   CRUD de Departamento Academico      |
     |_______________________________________|
     """)
     print("\t1. Campers\n\t2. Trainers\n\t0. Salir")
