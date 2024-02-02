@@ -1,0 +1,2 @@
+campersData = []
+trainersData = []

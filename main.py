@@ -1,10 +1,11 @@
 from os import system
 from modules.validate import noValid
+import modules.campers as campers
 
+system("clear")
 while True:
 
-    print("""
-     _______________________________________
+    print("""     _______________________________________
     |                                       |
     |   CRUM de Departamento Academico      |
     |_______________________________________|
@@ -15,8 +16,7 @@ while True:
     match(opc):
         case 1:
             system("clear")
-            print("\nCAMPERS")
-            # TODO: This should redirect to the campers CRUM
+            campers.menu()
         case 2:
             system("clear")
             print("\nTRAINERS")
@@ -26,4 +26,4 @@ while True:
             break
         case _:
             system("clear")
-            noValid()
+            noValid(opc)
