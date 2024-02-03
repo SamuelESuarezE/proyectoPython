@@ -1,14 +1,10 @@
 from os import system
-import json
 from modules.validate import noValid
-from modules.data import baseDeDatos
 import modules.campers as campers
 import modules.trainers as trainers
 
 system("clear")
 
-with open("modules/storage/data.json", "r") as f:
-    baseDeDatos = json.loads(f.read())
 
 while True:
 
