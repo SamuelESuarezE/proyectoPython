@@ -40,6 +40,19 @@
             "Celular": "",
             "Telefono_Fijo": "",
             "Estado": "Preinscrito"
+        },
+        {
+            "ID": "",
+            "Nombres": "",
+            "Apellidos": "",
+            "Direccion": "",
+            "Acudiente": {
+                "Nombre": "",
+                "ID": ""
+            },
+            "Celular": "12321",
+            "Telefono_Fijo": "",
+            "Estado": "Preinscrito"
         }
     ]
 }

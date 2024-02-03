@@ -10,11 +10,11 @@ with open("modules/storage/data.json", "r") as f:
 
 def menu():
     while True:
-        print("""         _______________________________________
-        |                                       |
-        |                CAMPERS                |
-        |_______________________________________|
-        """)
+        print("""     _______________________________________
+    |                                       |
+    |                CAMPERS                |
+    |_______________________________________|
+    """)
         print("\t1. Registrar Camper\n\t2. Lista de Campers\n\t3. Editar Camper\n\t4. Eliminar Camper\n\t0. Salir")
         opc = int(input())
 
@@ -24,7 +24,7 @@ def menu():
                 save()
             case 2:
                 system("clear")
-                search()
+                searchMenu()
             case 3:
                 system("clear")
                 edit()
@@ -40,11 +40,11 @@ def menu():
                 noValid(opc)
 
 def save():
-    print("""         _______________________________________
-        |                                       |
-        |          REGISTRO DE CAMPER           |
-        |_______________________________________|
-        """)
+    print("""     _______________________________________
+    |                                       |
+    |           REGISTRO DE CAMPER          |
+    |_______________________________________|
+    """)
     info = {
         "ID": input("N° de identificacion: "),
         "Nombres": input("Nombres: "),
@@ -67,38 +67,78 @@ def save():
         f.write(data)
     return system("clear"), print("Camper Guardado.")
 
+
+def searchMenu():
+        while True:
+            print("""     _______________________________________
+    |                                       |
+    |           LISTA DE CAMPERS            |
+    |_______________________________________|""")
+            print("""
+        1. Ver todos los Campers
+        2. Ver Campers segun estado
+        3. Ver Campers segun ruta
+        4. Ver Campers segun trainer
+        5. Ver Campers segun horario y salon
+        0. Salir""")
+            opc = int(input())
+
+            match(opc):
+                case 1:
+                    system("clear")
+                    search()
+                case 2:
+                    system("clear")
+                    # TODO: Esto me deberia mostrar los campers segun estado
+                case 3:
+                    system("clear")
+                    # TODO: Esto me deberia mostrar los campers segun ruta 
+                case 4:
+                    system("clear")
+                    # TODO: Esto me deberia mostrar los cmapers segun trainer
+                case 5:
+                    system("clear")
+                    # TODO: Esto me deberia mostrar los campers segun horario y salon
+                case 0:
+                    system("clear")
+                    break
+                case _:
+                    system("clear")
+                    noValid(opc)
+
+
 def search():
     system("clear")
     print("""     _______________________________________
     |                                       |
-    |           LISTA DE CAMPERS            |
+    |            LISTA DE CAMPERS           |
     |_______________________________________|
     """)
-    for i, camp in enumerate(campersList):
+    for camp in campersList:
         print(f"""
-        Codigo: {i}
-        ID: {camp.get("ID")}
-        Nombres: {camp.get("Nombres")}
-        Apellidos: {camp.get("Apellidos")}
-        Direccion: {camp.get("Direccion")}
-        Acudiente: {camp.get("Acudiente").get("Nombre")}
-        ID Acudiente: {camp.get("Acudiente").get("ID")}
-        Celular: {camp.get("Celular")}
-        Telefono fijo: {camp.get("Telefono_Fijo")}
-        Estado: {camp.get("Estado")}
+            ID: {camp.get("ID")}
+            Nombres: {camp.get("Nombres")}
+            Apellidos: {camp.get("Apellidos")}
+            Direccion: {camp.get("Direccion")}
+            Acudiente: {camp.get("Acudiente").get("Nombre")}
+            ID Acudiente: {camp.get("Acudiente").get("ID")}
+            Celular: {camp.get("Celular")}
+            Telefono fijo: {camp.get("Telefono_Fijo")}
+            Estado: {camp.get("Estado")}
         """)
 
 def edit():
     while True:
         print("""     _______________________________________
-        |                                       |
-        |           EDITAR UN CAMPER            |
-        |_______________________________________|
-        """)
+    |                                       |
+    |           EDITAR UN CAMPER            |
+    |_______________________________________|
+    """)
         
-        cod = int(input("Ingrese el codigo del camper que desea editar: "))
+        id_camper = input("Ingrese el id del camper que desea editar: ")
 
         try:
+            cod = next(index for index, camper in enumerate(campersList) if camper.get("ID") == id_camper)
             print(f"""
             ID: {campersList[cod].get("ID")}
             Nombres: {campersList[cod].get("Nombres")}
@@ -137,7 +177,7 @@ def edit():
                     system("clear")
                     break
 
-        except IndexError:
+        except StopIteration:
             system("clear")
             print("Error: Camper no encontrado.")
     
