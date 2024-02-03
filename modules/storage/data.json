@@ -31,11 +31,17 @@
     ],
     "trainers": [
         {
-            "ID": "1234567890",
+            "ID": "12345",
             "Nombre": "Miguel Castro",
-            "CodigoHorario": "1",
-            "CodigoRuta": "2"
+            "Horario": "2",
+            "Ruta": "2"
         }
     ],
-    "rutas": []
+    "rutas": [
+        {
+            "Nombre": "NodeJS",
+            "\u1e3eodulos": "Ejemplo",
+            "Codigo": "1"
+        }
+    ]
 }

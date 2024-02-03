@@ -2,7 +2,7 @@ from os import system
 from modules.validate import noValid
 import modules.campers as campers
 import modules.trainers as trainers
-
+import modules.rutas as rutas
 system("clear")
 
 
@@ -13,7 +13,7 @@ while True:
     |   CRUD de Departamento Academico      |
     |_______________________________________|
     """)
-    print("\t1. Campers\n\t2. Trainers\n\t0. Salir")
+    print("\t1. Campers\n\t2. Trainers\n\t3. Asignacion\n\t4. Rutas de aprendizaje y modulos\n\t5. Planillas academicas\n\t0. Salir")
     opc = int(input())
 
     match(opc):
@@ -23,6 +23,9 @@ while True:
         case 2:
             system("clear")
             trainers.menu()
+        case 4:
+            system("clear")
+            rutas.menu()
         case 0:
             system("clear")
             break
