@@ -61,5 +61,17 @@
             "Modulos": "adasdsadsas",
             "Codigo": "3"
         }
+    ],
+    "modulos": [
+        {
+            "Nombre": "Fundamentos de programacion",
+            "Temario": [
+                "Variables",
+                "Tipos de Datos",
+                "Condicionales",
+                "Bucles"
+            ],
+            "Codigo": "1"
+        }
     ]
 }
