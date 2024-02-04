@@ -96,6 +96,7 @@ def searchMenu():
                     case 1:
                         system("clear")
                         search()
+                        system("clear")
                         
                     case 2:
                         system("clear")
@@ -122,11 +123,6 @@ def searchMenu():
 
 
 def search():
-    print("""     _______________________________________
-    |                                       |
-    |            LISTA DE CAMPERS           |
-    |_______________________________________|
-    """)
     for camp in campersList:
         print(f"""
         ID: {camp.get("ID")}
@@ -139,6 +135,7 @@ def search():
         Telefono fijo: {camp.get("Telefono_Fijo")}
         Estado: {camp.get("Estado")}
         """)
+    system("pause")
 
 def edit():
     while True:
