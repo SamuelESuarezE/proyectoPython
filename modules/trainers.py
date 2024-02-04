@@ -16,32 +16,36 @@ def menu():
     |_______________________________________|
     """)
         print("\t1. Registrar Trainer\n\t2. Lista de Trainers\n\t3. Editar Trainer\n\t4. Eliminar Trainer\n\t0. Salir")
-        opc = int(input())
+        opc = input()
 
-        match(opc):
-            case 1:
-                system("clear")
-                save()
-            case 2:
-                system("clear")
-                search()
-            case 3:
-                system("clear")
-                edit()
-            case 4:
-                system("clear")
-                delete()
-            case 0:
-                system("clear")
-                break
-            case _:
-                system("clear")
-                noValid(opc)
-
+        try:
+            opc = int(opc)
+            match(opc):
+                case 1:
+                    system("clear")
+                    save()
+                case 2:
+                    system("clear")
+                    search()
+                case 3:
+                    system("clear")
+                    edit()
+                case 4:
+                    system("clear")
+                    delete()
+                case 0:
+                    system("clear")
+                    break
+                case _:
+                    system("clear")
+                    noValid(opc)
+        except ValueError:
+            system("clear")
+            noValid(opc)
 def save():
     print("""     _______________________________________
     |                                       |
-    |           REGISTRO DE TRAINER          |
+    |           REGISTRO DE TRAINER         |
     |_______________________________________|
     """)
     info = {
@@ -56,7 +60,6 @@ def save():
             return system("clear"), print("Este trainer ya esta registrado.")
 
     trainersList.append(info)
-    baseDeDatos['trainers']=trainersList
 
     with open("modules/storage/data.json", "w") as f:
         data = json.dumps(baseDeDatos, indent=4)
@@ -67,7 +70,7 @@ def search():
     system("clear")
     print("""     _______________________________________
     |                                       |
-    |            LISTA DE TRAINERS           |
+    |            LISTA DE TRAINERS          |
     |_______________________________________|
     """)
     for train in trainersList:
@@ -82,7 +85,7 @@ def edit():
     while True:
         print("""     _______________________________________
     |                                       |
-    |           EDITAR UN TRAINER            |
+    |           EDITAR UN TRAINER           |
     |_______________________________________|
     """)
         
@@ -97,27 +100,32 @@ def edit():
             Ruta: {trainersList[cod].get("Ruta")}
             """)
             print("¿Esta seguro que este es el trainer que desea editar?\n\t1. Si\n\t2. No\n\t0. Salir")
-            opc = int(input())
+            opc = input()
 
-            match(opc):
-                case 1:
-                    system("clear")
-                    trainersList[cod]["ID"] = input("N° de identificacion: ")
-                    trainersList[cod]["Nombre"] = input("Nombre completo: ")
-                    trainersList[cod]["Horario"] = input("Horario:\n\t1. Mañana: 6 am a 10 am\n\t2. Mañana: 10 am a 2 pm\n\t3. Tarde: 2 pm a 6 pm\n\t4. Tarde: 6 pm a 10 pm\n")
-                    trainersList[cod]["Ruta"] = input("Ruta:\n\t1. Java\n\t2. Node JS\n\t3. NetCore\n")
+            try:
+                opc = int(opc)
+                match(opc):
+                    case 1:
+                        system("clear")
+                        trainersList[cod]["ID"] = input("N° de identificacion: ")
+                        trainersList[cod]["Nombre"] = input("Nombre completo: ")
+                        trainersList[cod]["Horario"] = input("Horario:\n\t1. Mañana: 6 am a 10 am\n\t2. Mañana: 10 am a 2 pm\n\t3. Tarde: 2 pm a 6 pm\n\t4. Tarde: 6 pm a 10 pm\n")
+                        trainersList[cod]["Ruta"] = input("Ruta:\n\t1. Java\n\t2. Node JS\n\t3. NetCore\n")
 
-                    with open("modules/storage/data.json", "w") as f:
-                        data = json.dumps(baseDeDatos, indent=4)
-                        f.write(data)
-                    system("clear")
-                    print("Trainer editado.")
-                    break
-                case 2:
-                    system("clear")
-                case 0:
-                    system("clear")
-                    break
+                        with open("modules/storage/data.json", "w") as f:
+                            data = json.dumps(baseDeDatos, indent=4)
+                            f.write(data)
+                        system("clear")
+                        print("Trainer editado.")
+                        break
+                    case 2:
+                        system("clear")
+                    case 0:
+                        system("clear")
+                        break
+            except ValueError:
+                system("clear")
+                noValid(opc)
 
         except StopIteration:
             system("clear")
@@ -142,24 +150,29 @@ def delete():
             Ruta: {trainersList[cod].get("Ruta")}
             """)
             print("¿Esta seguro que este es el trainer que desea eliminar?\n\t1. Si\n\t2. No\n\t0. Salir")
-            opc = int(input())
+            opc = input()
 
-            match(opc):
-                case 1:
-                    system("clear")
-                    trainersList.pop(cod)
+            try:
+                opc = int(opc)
+                match(opc):
+                    case 1:
+                        system("clear")
+                        trainersList.pop(cod)
 
-                    with open("modules/storage/data.json", "w") as f:
-                        data = json.dumps(baseDeDatos, indent=4)
-                        f.write(data)
-                    system("clear")
-                    print("Trainer eliminado.")
-                    break
-                case 2:
-                    system("clear")
-                case 0:
-                    system("clear")
-                    break
+                        with open("modules/storage/data.json", "w") as f:
+                            data = json.dumps(baseDeDatos, indent=4)
+                            f.write(data)
+                        system("clear")
+                        print("Trainer eliminado.")
+                        break
+                    case 2:
+                        system("clear")
+                    case 0:
+                        system("clear")
+                        break
+            except ValueError:
+                system("clear")
+                noValid(opc)
         except StopIteration:
             system("clear")
             print("Error: Trainer no encontrado.")

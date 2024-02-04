@@ -16,27 +16,32 @@ def menu():
     |_______________________________________|
     """)
         print("\t1. Registrar Camper\n\t2. Lista de Campers\n\t3. Editar Camper\n\t4. Eliminar Camper\n\t0. Salir")
-        opc = int(input())
+        opc = input()
 
-        match(opc):
-            case 1:
-                system("clear")
-                save()
-            case 2:
-                system("clear")
-                searchMenu()
-            case 3:
-                system("clear")
-                edit()
-            case 4:
-                system("clear")
-                delete()
-            case 0:
-                system("clear")
-                break
-            case _:
-                system("clear")
-                noValid(opc)
+        try:
+            opc = int(opc)
+            match(opc):
+                case 1:
+                    system("clear")
+                    save()
+                case 2:
+                    system("clear")
+                    searchMenu()
+                case 3:
+                    system("clear")
+                    edit()
+                case 4:
+                    system("clear")
+                    delete()
+                case 0:
+                    system("clear")
+                    break
+                case _:
+                    system("clear")
+                    noValid(opc)
+        except ValueError:
+            system("clear")
+            noValid(opc)
 
 def save():
     print("""     _______________________________________
@@ -82,30 +87,35 @@ def searchMenu():
         4. Ver Campers segun trainer
         5. Ver Campers segun horario y salon
         0. Salir""")
-            opc = int(input())
+            opc = input()
 
-            match(opc):
-                case 1:
-                    system("clear")
-                    search()
-                case 2:
-                    system("clear")
-                    # TODO: Esto me deberia mostrar los campers segun estado
-                case 3:
-                    system("clear")
-                    # TODO: Esto me deberia mostrar los campers segun ruta 
-                case 4:
-                    system("clear")
-                    # TODO: Esto me deberia mostrar los cmapers segun trainer
-                case 5:
-                    system("clear")
-                    # TODO: Esto me deberia mostrar los campers segun horario y salon
-                case 0:
-                    system("clear")
-                    break
-                case _:
-                    system("clear")
-                    noValid(opc)
+            try:
+                opc = int(opc)
+                match(opc):
+                    case 1:
+                        system("clear")
+                        search()
+                    case 2:
+                        system("clear")
+                        # TODO: Esto me deberia mostrar los campers segun estado
+                    case 3:
+                        system("clear")
+                        # TODO: Esto me deberia mostrar los campers segun ruta 
+                    case 4:
+                        system("clear")
+                        # TODO: Esto me deberia mostrar los cmapers segun trainer
+                    case 5:
+                        system("clear")
+                        # TODO: Esto me deberia mostrar los campers segun horario y salon
+                    case 0:
+                        system("clear")
+                        break
+                    case _:
+                        system("clear")
+                        noValid(opc)
+            except ValueError:
+                system("clear")
+                noValid(opc)
 
 
 def search():
@@ -152,33 +162,37 @@ def edit():
             Estado: {campersList[cod].get("Estado")}
             """)
             print("¿Esta seguro que este es el camper que desea editar?\n\t1. Si\n\t2. No\n\t0. Salir")
-            opc = int(input())
+            opc = input()
 
-            match(opc):
-                case 1:
-                    system("clear")
-                    campersList[cod]["ID"] = input("N° de identificacion: ")
-                    campersList[cod]["Nombre"] = input("Nombres: ")
-                    campersList[cod]["Apellido"] = input("Apellidos: ")
-                    campersList[cod]["Direccion"] = input("Direccion: ")
-                    campersList[cod]["Acudiente"]["Nombre"] = input("(Acudiente) Nombre completo: ")
-                    campersList[cod]["Acudiente"]["ID"] = input("(Acudiente) N° de identificacion: ")
-                    campersList[cod]["Celular"] = input("Celular: ")
-                    campersList[cod]["Telefono_Fijo"] = input("Telefono fijo: ")
-                    campersList[cod]["Estado"] = "Preinscrito"
+            try:
+                opc = int(opc)
+                match(opc):
+                    case 1:
+                        system("clear")
+                        campersList[cod]["ID"] = input("N° de identificacion: ")
+                        campersList[cod]["Nombre"] = input("Nombres: ")
+                        campersList[cod]["Apellido"] = input("Apellidos: ")
+                        campersList[cod]["Direccion"] = input("Direccion: ")
+                        campersList[cod]["Acudiente"]["Nombre"] = input("(Acudiente) Nombre completo: ")
+                        campersList[cod]["Acudiente"]["ID"] = input("(Acudiente) N° de identificacion: ")
+                        campersList[cod]["Celular"] = input("Celular: ")
+                        campersList[cod]["Telefono_Fijo"] = input("Telefono fijo: ")
+                        campersList[cod]["Estado"] = "Preinscrito"
 
-                    with open("modules/storage/data.json", "w") as f:
-                        data = json.dumps(baseDeDatos, indent=4)
-                        f.write(data)
-                    system("clear")
-                    print("Camper editado.")
-                    break
-                case 2:
-                    system("clear")
-                case 0:
-                    system("clear")
-                    break
-
+                        with open("modules/storage/data.json", "w") as f:
+                            data = json.dumps(baseDeDatos, indent=4)
+                            f.write(data)
+                        system("clear")
+                        print("Camper editado.")
+                        break
+                    case 2:
+                        system("clear")
+                    case 0:
+                        system("clear")
+                        break
+            except ValueError:
+                system("clear")
+                noValid(opc)
         except StopIteration:
             system("clear")
             print("Error: Camper no encontrado.")
@@ -207,25 +221,28 @@ def delete():
             Estado: {campersList[cod].get("Estado")}
             """)
             print("¿Esta seguro que este es el camper que desea eliminar?\n\t1. Si\n\t2. No\n\t0. Salir")
-            opc = int(input())
+            opc = input()
 
-            match(opc):
-                case 1:
-                    system("clear")
-                    campersList.pop(cod)
+            try:
+                match(opc):
+                    case 1:
+                        system("clear")
+                        campersList.pop(cod)
 
-                    with open("modules/storage/data.json", "w") as f:
-                        data = json.dumps(baseDeDatos, indent=4)
-                        f.write(data)
-                    system("clear")
-                    print("Camper eliminado.")
-                    break
-                case 2:
-                    system("clear")
-                case 0:
-                    system("clear")
-                    break
-
+                        with open("modules/storage/data.json", "w") as f:
+                            data = json.dumps(baseDeDatos, indent=4)
+                            f.write(data)
+                        system("clear")
+                        print("Camper eliminado.")
+                        break
+                    case 2:
+                        system("clear")
+                    case 0:
+                        system("clear")
+                        break
+            except ValueError:
+                system("clear")
+                noValid(opc)
         except StopIteration:
             system("clear")
             print("Error: Camper no encontrado.")

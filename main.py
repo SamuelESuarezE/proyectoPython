@@ -14,21 +14,26 @@ while True:
     |_______________________________________|
     """)
     print("\t1. Campers\n\t2. Trainers\n\t3. Asignacion\n\t4. Rutas de aprendizaje y modulos\n\t5. Planillas academicas\n\t0. Salir")
-    opc = int(input())
+    opc = input()
 
-    match(opc):
-        case 1:
-            system("clear")
-            campers.menu()
-        case 2:
-            system("clear")
-            trainers.menu()
-        case 4:
-            system("clear")
-            rutas.menu()
-        case 0:
-            system("clear")
-            break
-        case _:
-            system("clear")
-            noValid(opc)
+    try:
+        opc = int(opc)
+        match(opc):
+            case 1:
+                system("clear")
+                campers.menu()
+            case 2:
+                system("clear")
+                trainers.menu()
+            case 4:
+                system("clear")
+                rutas.menu()
+            case 0:
+                system("clear")
+                break
+            case _:
+                system("clear")
+                noValid(opc)
+    except ValueError:
+        system("clear")
+        noValid(opc)

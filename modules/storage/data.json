@@ -35,13 +35,31 @@
             "Nombre": "Miguel Castro",
             "Horario": "2",
             "Ruta": "2"
+        },
+        {
+            "ID": "1098665605",
+            "Nombre": "Mariana Traslavi\u00f1a Sarmiento",
+            "Horario": "2",
+            "Ruta": "3"
+        },
+        {
+            "ID": "12345678",
+            "Nombre": "Yolver Noseque",
+            "Horario": "2",
+            "Ruta": "2"
+        },
+        {
+            "ID": "1234",
+            "Nombre": "samuel",
+            "Horario": "2",
+            "Ruta": "1"
         }
     ],
     "rutas": [
         {
-            "Nombre": "NodeJS",
-            "\u1e3eodulos": "Ejemplo",
-            "Codigo": "1"
+            "Nombre": "NetCore",
+            "Modulos": "adasdsadsas",
+            "Codigo": "3"
         }
     ]
 }

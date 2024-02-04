@@ -3,6 +3,7 @@ from .validate import noValid
 import json
 
 rutasList = []
+modulosList = []
 
 with open("modules/storage/data.json", "r") as f:
     baseDeDatos = json.loads(f.read())
@@ -16,27 +17,31 @@ def menu():
     |_______________________________________|
     """)
         print("\t1. Registrar Ruta\n\t2. Lista de Rutas\n\t3. Editar Ruta\n\t4. Eliminar Ruta\n\t0. Salir")
-        opc = int(input())
-
-        match(opc):
-            case 1:
-                system("clear")
-                save()
-            case 2:
-                system("clear")
-                search()
-            case 3:
-                system("clear")
-                edit()
-            case 4:
-                system("clear")
-                delete()
-            case 0:
-                system("clear")
-                break
-            case _:
-                system("clear")
-                noValid(opc)
+        opc = input()
+        try:
+            opc = int(opc)
+            match(opc):
+                case 1:
+                    system("clear")
+                    save()
+                case 2:
+                    system("clear")
+                    search()
+                case 3:
+                    system("clear")
+                    edit()
+                case 4:
+                    system("clear")
+                    delete()
+                case 0:
+                    system("clear")
+                    break
+                case _:
+                    system("clear")
+                    noValid(opc)
+        except ValueError:
+            system("clear")
+            noValid(opc)
 
 def save():
     print("""     _______________________________________
@@ -46,7 +51,7 @@ def save():
     """)
     info = {
         "Nombre": input("Nombre de ruta: "),
-        "Ḿodulos": input("Modulos de ruta: "),
+        "Modulos": input("Modulos de ruta: "),
         "Codigo": input("Codigo de ruta: ")
     }
     for ruta in rutasList:
@@ -64,7 +69,7 @@ def search():
     system("clear")
     print("""     _______________________________________
     |                                       |
-    |            LISTA DE RUTAS           |
+    |            LISTA DE RUTAS             |
     |_______________________________________|
     """)
     for ruta in rutasList:
@@ -157,3 +162,56 @@ def delete():
         except StopIteration:
             system("clear")
             print("Error: Ruta no encontrada.")
+
+def modulos():
+    while True:
+        print("""     _______________________________________
+    |                                       |
+    |        MODULOS DE ENTRENAMIENTO       |
+    |_______________________________________|
+    """)
+        print("\t1. Registrar Modulo\n\t2. Lista de Modulos\n\t3. Editar Modulo\n\t4. Eliminar Modulo\n\t0. Salir")
+        opc = input()
+
+        try:
+            opc = int(opc)
+            match(opc):
+                case 1:
+                    system("clear")
+                case 2:
+                    system("clear")
+                case 3:
+                    system("clear")
+                case 4:
+                    system("clear")
+                case 0:
+                    system("clear")
+                    break
+                case _:
+                    system("clear")
+                    noValid(opc)
+        except ValueError:
+            system("clear")
+            noValid(opc)
+    
+    def save_modulos():
+        print("""     _______________________________________
+        |                                       |
+        |         REGISTRO DE MODULO            |
+        |_______________________________________|
+        """)
+        info = {
+            "Nombre": input("Nombre de ruta: "),
+            "Modulos": input("Modulos de ruta: "),
+            "Codigo": input("Codigo de ruta: ")
+        }
+        for ruta in rutasList:
+            if info.get("Codigo") == ruta.get("Codigo"):
+                return system("clear"), print("Esta ruta ya esta registrada.")
+        rutasList.append(info)
+        baseDeDatos['rutas']=rutasList
+
+        with open("modules/storage/data.json", "w") as f:
+            data = json.dumps(baseDeDatos, indent=4)
+            f.write(data)
+        return system("clear"), print("Ruta Guardada.")

@@ -1,7 +1,10 @@
-numbers = [1,2,3,4,5,6,7,8,9,10,11]
-target_key = 12
+info = {
+    "Nombre": input("Nombre de ruta: "),
+    "Temario": input("Ingrese los temas de este modulo separados por comas (','): "),
+    "Codigo": input("Codigo de ruta: ")
+}
 
-# Encontrar la clave en el diccionario
-key = numbers.find(target_key)
+info["Temario"] = info["Temario"].split(",")
 
-print(key)
+for tema in info["Temario"]:
+    print(tema)
