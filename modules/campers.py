@@ -10,6 +10,7 @@ with open("modules/storage/data.json", "r") as f:
 
 def menu():
     while True:
+        system("clear")
         print("""     _______________________________________
     |                                       |
     |                CAMPERS                |
@@ -95,6 +96,7 @@ def searchMenu():
                     case 1:
                         system("clear")
                         search()
+                        
                     case 2:
                         system("clear")
                         # TODO: Esto me deberia mostrar los campers segun estado
@@ -109,6 +111,7 @@ def searchMenu():
                         # TODO: Esto me deberia mostrar los campers segun horario y salon
                     case 0:
                         system("clear")
+                        system("exit")
                         break
                     case _:
                         system("clear")
@@ -119,7 +122,6 @@ def searchMenu():
 
 
 def search():
-    system("clear")
     print("""     _______________________________________
     |                                       |
     |            LISTA DE CAMPERS           |
@@ -170,8 +172,8 @@ def edit():
                     case 1:
                         system("clear")
                         campersList[cod]["ID"] = input("N° de identificacion: ")
-                        campersList[cod]["Nombre"] = input("Nombres: ")
-                        campersList[cod]["Apellido"] = input("Apellidos: ")
+                        campersList[cod]["Nombres"] = input("Nombres: ")
+                        campersList[cod]["Apellidos"] = input("Apellidos: ")
                         campersList[cod]["Direccion"] = input("Direccion: ")
                         campersList[cod]["Acudiente"]["Nombre"] = input("(Acudiente) Nombre completo: ")
                         campersList[cod]["Acudiente"]["ID"] = input("(Acudiente) N° de identificacion: ")
@@ -211,8 +213,8 @@ def delete():
             cod = next(index for index, camper in enumerate(campersList) if camper.get("ID") == id_camper)
             print(f"""
             ID: {campersList[cod].get("ID")}
-            Nombres: {campersList[cod].get("Nombres")}
-            Apellidos: {campersList[cod].get("Apellidos")}
+            Nombres: {campersList[cod].get("Nombre")}
+            Apellidos: {campersList[cod].get("Apellido")}
             Direccion: {campersList[cod].get("Direccion")}
             Acudiente: {campersList[cod].get("Acudiente").get("Nombre")}
             ID Acudiente: {campersList[cod].get("Acudiente").get("ID")}
@@ -224,6 +226,7 @@ def delete():
             opc = input()
 
             try:
+                opc = int(opc)
                 match(opc):
                     case 1:
                         system("clear")

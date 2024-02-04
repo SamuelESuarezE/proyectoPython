@@ -3,11 +3,10 @@ from modules.validate import noValid
 import modules.campers as campers
 import modules.trainers as trainers
 import modules.rutas as rutas
-system("clear")
 
 
 while True:
-
+    system("clear")
     print("""     _______________________________________
     |                                       |
     |   CRUD de Departamento Academico      |

@@ -27,6 +27,21 @@
             "Estado": "Preinscrito",
             "Nombre": "Mariana",
             "Apellido": "Traslavi\u00f1a Sarmiento"
+        },
+        {
+            "ID": "123456789",
+            "Nombres": "Felipe",
+            "Apellidos": "Carrillo",
+            "Direccion": "",
+            "Acudiente": {
+                "Nombre": "",
+                "ID": ""
+            },
+            "Celular": "",
+            "Telefono_Fijo": "",
+            "Estado": "Preinscrito",
+            "Nombre": "Felipe",
+            "Apellido": "Carrillo"
         }
     ],
     "trainers": [

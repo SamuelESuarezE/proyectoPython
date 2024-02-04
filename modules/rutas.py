@@ -188,8 +188,10 @@ def modulos():
                     search_modules()
                 case 3:
                     system("clear")
+                    
                 case 4:
                     system("clear")
+                    delete_modules()
                 case 0:
                     system("clear")
                     break
@@ -246,7 +248,7 @@ def delete_modules():
     |_______________________________________|
     """)
         
-        codigo_modulo = input("Ingrese el codigo del ruta que desea eliminar: ")
+        codigo_modulo = input("Ingrese el codigo del modulo que desea eliminar: ")
 
         try:
             cod = next(index for index, modulo in enumerate(modulosList) if modulo.get("Codigo") == codigo_modulo)
@@ -256,25 +258,79 @@ def delete_modules():
             Codigo: {modulosList[cod].get("Codigo")}
             """)
             print("¿Esta seguro que este es el modulo que desea eliminar?\n\t1. Si\n\t2. No\n\t0. Salir")
-            opc = int(input())
+            opc = input()
 
-            match(opc):
-                case 1:
-                    system("clear")
-                    rutasList.pop(cod)
+            try:
+                opc = int(opc)
+                match(opc):
+                    case 1:
+                        system("clear")
+                        modulosList.pop(cod)
 
-                    with open("modules/storage/data.json", "w") as f:
-                        data = json.dumps(baseDeDatos, indent=4)
-                        f.write(data)
-                    system("clear")
-                    print("Ruta eliminada.")
-                    break
-                case 2:
-                    system("clear")
-                case 0:
-                    system("clear")
-                    break
+                        with open("modules/storage/data.json", "w") as f:
+                            data = json.dumps(baseDeDatos, indent=4)
+                            f.write(data)
+                        system("clear")
+                        print("Modulo eliminado.")
+                        break
+                    case 2:
+                        system("clear")
+                    case 0:
+                        system("clear")
+                        break
+            except ValueError:
+                system("clear")
+                noValid(opc)
 
         except StopIteration:
             system("clear")
-            print("Error: Ruta no encontrada.")
+            print("Error: Modulo no encontrado.")
+
+def edit_modules():
+     while True:
+        print("""     _______________________________________
+    |                                       |
+    |           EDITAR UN MODULO            |
+    |_______________________________________|
+    """)
+        
+        codigo_modulo = input("Ingrese el codigo del modulo que desea editar: ")
+
+        try:
+            cod = next(index for index, modulo in enumerate(modulosList) if modulo.get("Codigo") == codigo_modulo)
+            print(f"""
+            Nombre: {modulosList[cod].get("Nombre")}
+            Temario: {modulosList[cod].get("Temario")}
+            Codigo: {modulosList[cod].get("Codigo")}
+            """)
+            print("¿Esta seguro que este es el modulo que desea editar?\n\t1. Si\n\t2. No\n\t0. Salir")
+            opc = input()
+
+            try:
+                opc = int(opc)
+                match(opc):
+                    case 1:
+                        system("clear")
+                        modulosList[cod]["Nombre"] = input("Nombre: ")
+                        modulosList[cod]["Temario"] = input("Ingrese los temas de este modulo separados por comas (','): ")
+                        modulosList[cod]["Codigo"] = input("Codigo: ")
+                        
+                        modulosList[cod]["Temario"] = modulosList[cod]["Temario"].split(",")
+                        
+                        with open("modules/storage/data.json", "w") as f:
+                            data = json.dumps(baseDeDatos, indent=4)
+                            f.write(data)
+                        system("clear")
+                        print("Modulo editado.")
+                        break
+                    case 2:
+                        system("clear")
+                    case 0:
+                        system("clear")
+                        break
+            except ValueError:
+                system("clear")
+                noValid(opc)
+        except StopIteration:
+            system("clear")
+            print("Error: Modulo no encontrado.")
