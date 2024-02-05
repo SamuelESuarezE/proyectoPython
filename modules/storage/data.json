@@ -7,41 +7,11 @@
             "Direccion": "Conjunto Monteverdi Torre 5 Apto 601",
             "Acudiente": {
                 "Nombre": "Jorge Suarez",
-                "ID": "72838723"
+                "ID": "7123721"
             },
             "Celular": "3185695249",
             "Telefono_Fijo": "",
             "Estado": "Preinscrito"
-        },
-        {
-            "ID": "1098165665",
-            "Nombres": "Mariana ",
-            "Apellidos": "",
-            "Direccion": "",
-            "Acudiente": {
-                "Nombre": "",
-                "ID": ""
-            },
-            "Celular": "",
-            "Telefono_Fijo": "",
-            "Estado": "Preinscrito",
-            "Nombre": "Mariana",
-            "Apellido": "Traslavi\u00f1a Sarmiento"
-        },
-        {
-            "ID": "123456789",
-            "Nombres": "Felipe",
-            "Apellidos": "Carrillo",
-            "Direccion": "",
-            "Acudiente": {
-                "Nombre": "",
-                "ID": ""
-            },
-            "Celular": "",
-            "Telefono_Fijo": "",
-            "Estado": "Preinscrito",
-            "Nombre": "Felipe",
-            "Apellido": "Carrillo"
         }
     ],
     "trainers": [

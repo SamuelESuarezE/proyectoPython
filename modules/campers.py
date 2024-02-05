@@ -10,7 +10,6 @@ with open("modules/storage/data.json", "r") as f:
 
 def menu():
     while True:
-        system("clear")
         print("""     _______________________________________
     |                                       |
     |                CAMPERS                |
@@ -66,6 +65,7 @@ def save():
     for camp in campersList:
         if info.get("ID") == camp.get("ID"):
             return system("clear"), print("Este camper ya esta registrado.")
+        
     campersList.append(info)
     baseDeDatos['campers']=campersList
 
