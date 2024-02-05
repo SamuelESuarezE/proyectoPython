@@ -2,9 +2,6 @@ from os import system
 from .validate import noValid
 import json
 
-rutasList = []
-modulosList = []
-
 with open("modules/storage/data.json", "r") as f:
     baseDeDatos = json.loads(f.read())
     rutasList = baseDeDatos["rutas"]
@@ -55,7 +52,7 @@ def save():
     """)
     info = {
         "Nombre": input("Nombre de ruta: "),
-        "Modulos": input("Modulos de ruta: "),
+        "Modulos": mostrarModulos(),
         "Codigo": input("Codigo de ruta: ")
     }
     for ruta in rutasList:
@@ -68,6 +65,30 @@ def save():
         data = json.dumps(baseDeDatos, indent=4)
         f.write(data)
     return system("clear"), print("Ruta Guardada.")
+
+def mostrarModulos():
+    with open("modules/storage/data.json", "r") as f:
+        baseDeDatos = json.loads(f.read())
+        modulosList = baseDeDatos["modulos"]
+    
+    while True:
+        print("Modulos: Digite los codigos que desea incluir separados por comas (',')")
+        for modulo in modulosList:
+            print(f"\t{modulo.get('Codigo')}. {modulo.get('Nombre')}")
+        modulosSeleccionado = input()
+        modulosSeleccionado = modulosSeleccionado.split(",")
+
+        modulosDeRuta = []
+        
+        for x, modulo in zip(range(len(modulosSeleccionado)), modulosList):
+            try:
+                if modulo.get("Codigo") == modulosSeleccionado[x]:
+                    modulosDeRuta.append(modulo.get("Nombre"))
+            except IndexError:
+                print("Atencion! - Hubo modulo/s no encontrado/s")
+        return modulosDeRuta
+            
+            
 
 def search():
     system("clear")
@@ -96,9 +117,9 @@ def edit():
         try:
             cod = next(index for index, ruta in enumerate(rutasList) if ruta.get("Codigo") == codigo_ruta)
             print(f"""
-            Nombre de ruta: {rutasList[cod].get("Nombre")}
-            Modulos de ruta: {rutasList[cod].get("Modulos")}
-            Codigo de ruta: {rutasList[cod].get("Codigo")}
+            Nombre: {rutasList[cod].get("Nombre")}
+            Modulos: {rutasList[cod].get("Modulos")}
+            Codigo: {rutasList[cod].get("Codigo")}
             """)
             print("¿Esta seguro que este es el ruta que desea editar?\n\t1. Si\n\t2. No\n\t0. Salir")
             opc = input()
@@ -107,7 +128,7 @@ def edit():
                 match(opc):
                     case 1:
                         system("clear")
-                        rutasList[cod]["Nombre"] = input("Nombre de ruta: ")
+                        rutasList[cod]["Nombre"] = input("Nombre: ")
                         rutasList[cod]["Modulos"] = input("Modulos: ")
                         rutasList[cod]["Codigo"] = input("Codigo: ")
 
@@ -137,14 +158,14 @@ def delete():
     |_______________________________________|
     """)
         
-        codigo_ruta = input("Ingrese el id del ruta que desea eliminar: ")
+        codigo_ruta = input("Ingrese el codigo del ruta que desea eliminar: ")
 
         try:
             cod = next(index for index, ruta in enumerate(rutasList) if ruta.get("Codigo") == codigo_ruta)
             print(f"""
-            Nombre de ruta: {rutasList[cod].get("Nombre")}
-            Modulos de ruta: {rutasList[cod].get("Modulos")}
-            Codigo de ruta: {rutasList[cod].get("Codigo")}
+            Nombre: {rutasList[cod].get("Nombre")}
+            Modulos: {rutasList[cod].get("Modulos")}
+            Codigo: {rutasList[cod].get("Codigo")}
             """)
             print("¿Esta seguro que este es el ruta que desea eliminar?\n\t1. Si\n\t2. No\n\t0. Salir")
             opc = input()

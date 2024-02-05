@@ -2,8 +2,6 @@ from os import system
 from .validate import noValid
 import json
 
-trainersList = []
-
 with open("modules/storage/data.json", "r") as f:
     baseDeDatos = json.loads(f.read())
     trainersList = baseDeDatos["trainers"]
@@ -52,7 +50,7 @@ def save():
         "ID": input("N° de identificacion: "),
         "Nombre": input("Nombre completo: "),
         "Horario": input("Horario:\n\t1. Mañana: 6 am a 10 am\n\t2. Mañana: 10 am a 2 pm\n\t3. Tarde: 2 pm a 6 pm\n\t4. Tarde: 6 pm a 10 pm\n"),
-        "Ruta": input("Ruta:\n\t1. Java\n\t2. Node JS\n\t3. NetCore\n"),
+        "Ruta": mostrarRutas()
     }
 
     for train in trainersList:
@@ -65,6 +63,23 @@ def save():
         data = json.dumps(baseDeDatos, indent=4)
         f.write(data)
     return system("clear"), print("Trainer Guardado.")
+
+def mostrarRutas():
+    with open("modules/storage/data.json", "r") as f:
+        baseDeDatos = json.loads(f.read())
+        rutasList = baseDeDatos["rutas"]
+
+    while True:
+        print("Ruta:")
+        for ruta in rutasList:
+            print(f"\t{ruta.get('Codigo')}. {ruta.get('Nombre')}")
+        rutaSeleccionada = input()
+        
+        for ruta in rutasList:
+            if ruta.get("Codigo") == rutaSeleccionada:
+                return ruta.get("Nombre")
+            else:
+                print("Ruta no encontrada.")
 
 def search():
     system("clear")
@@ -135,7 +150,7 @@ def delete():
     while True:
         print("""     _______________________________________
     |                                       |
-    |          ELIMINAR UN TRAINER           |
+    |          ELIMINAR UN TRAINER          |
     |_______________________________________|
     """)
         

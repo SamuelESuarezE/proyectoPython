@@ -4,7 +4,6 @@ import modules.campers as campers
 import modules.trainers as trainers
 import modules.rutas as rutas
 
-
 while True:
     system("clear")
     print("""     _______________________________________

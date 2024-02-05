@@ -16,35 +16,39 @@
     ],
     "trainers": [
         {
-            "ID": "12345",
-            "Nombre": "Miguel Castro",
-            "Horario": "2",
-            "Ruta": "2"
-        },
-        {
-            "ID": "1098665605",
-            "Nombre": "Mariana Traslavi\u00f1a Sarmiento",
-            "Horario": "2",
-            "Ruta": "3"
-        },
-        {
-            "ID": "12345678",
-            "Nombre": "Yolver Noseque",
-            "Horario": "2",
-            "Ruta": "2"
-        },
-        {
             "ID": "1234",
-            "Nombre": "samuel",
-            "Horario": "2",
-            "Ruta": "1"
+            "Nombre": "MiguelCastro",
+            "Horario": "1",
+            "Ruta": "NodeJS"
+        },
+        {
+            "ID": "421",
+            "Nombre": "Mariana",
+            "Horario": "1",
+            "Ruta": "si"
+        },
+        {
+            "ID": "89",
+            "Nombre": "MarianaT",
+            "Horario": "1",
+            "Ruta": "PHP"
         }
     ],
     "rutas": [
         {
-            "Nombre": "NetCore",
-            "Modulos": "adasdsadsas",
-            "Codigo": "3"
+            "Nombre": "NodeJS",
+            "Modulos": [
+                "Fundamentos de programacion"
+            ],
+            "Codigo": "1"
+        },
+        {
+            "Nombre": "Java",
+            "Modulos": [
+                "Fundamentos de programacion",
+                "Bases de Datos"
+            ],
+            "Codigo": "2"
         }
     ],
     "modulos": [
@@ -57,6 +61,15 @@
                 "Bucles"
             ],
             "Codigo": "1"
+        },
+        {
+            "Nombre": "Bases de Datos",
+            "Temario": [
+                "MongoDB",
+                "SQL",
+                "MySQL"
+            ],
+            "Codigo": "2"
         }
     ]
 }
