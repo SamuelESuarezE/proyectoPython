@@ -49,7 +49,7 @@ def save():
     info = {
         "ID": input("N° de identificacion: "),
         "Nombre": input("Nombre completo: "),
-        "Horario": input("Horario:\n\t1. Mañana: 6 am a 10 am\n\t2. Mañana: 10 am a 2 pm\n\t3. Tarde: 2 pm a 6 pm\n\t4. Tarde: 6 pm a 10 pm\n"),
+        "Horario": input("Horario:\n\t1. Mañana: 6 am a 10 am\n\t2. Mañana: 10 am a 2 pm\n\t3. Tarde: 2 pm a 6 pm\n\t4. Tarde: 6 pm a 10 pm\nEscriba los numeros de los horarios que maneje: "),
         "Ruta": mostrarRutas()
     }
 

@@ -87,10 +87,18 @@ def mostrarModulos():
             except IndexError:
                 print("Atencion! - Hubo modulo/s no encontrado/s")
         return modulosDeRuta
-            
-            
+
+    with open("modules/storage/data.json", "r") as f:
+        baseDeDatos = json.loads(f.read())
+        modulosList = baseDeDatos["modulos"]
+    temasList = modulosList[codigo]
+    for i, tema in enumerate(temasList):
+        print(f"\t{i+1}. {tema}")
 
 def search():
+    with open("modules/storage/data.json", "r") as f:
+        baseDeDatos = json.loads(f.read())
+        rutasList = baseDeDatos["rutas"]
     system("clear")
     print("""     _______________________________________
     |                                       |
@@ -129,7 +137,7 @@ def edit():
                     case 1:
                         system("clear")
                         rutasList[cod]["Nombre"] = input("Nombre: ")
-                        rutasList[cod]["Modulos"] = input("Modulos: ")
+                        rutasList[cod]["Modulos"] = mostrarModulos()
                         rutasList[cod]["Codigo"] = input("Codigo: ")
 
                         with open("modules/storage/data.json", "w") as f:
@@ -238,7 +246,8 @@ def save_modulos():
     info = {
         "Nombre": input("Nombre: "),
         "Temario": input("Ingrese los temas de este modulo separados por comas (','): "),
-        "Codigo": input("Codigo: ")
+        "Codigo": input("Codigo: "),
+        "Prioridad": mostrarPrioridad()
     }
 
     info["Temario"] = info["Temario"].split(",")
@@ -252,6 +261,21 @@ def save_modulos():
         data = json.dumps(baseDeDatos, indent=4)
         f.write(data)
     return system("clear"), print("Modulo Guardado.")
+
+def mostrarPrioridad():
+    while True:
+        print("Prioridad: ")
+        print("\t1. Principal\n\t2. Secundaria")
+        prioridadSeleccionada = input()
+
+        match(prioridadSeleccionada):
+            case "1":
+                return "Principal"
+            case "2": 
+                return "Secundaria"
+            case _:
+                noValid(prioridadSeleccionada)
+
 
 def search_modules():
     system("clear")

@@ -16,60 +16,40 @@
     ],
     "trainers": [
         {
-            "ID": "1234",
-            "Nombre": "MiguelCastro",
-            "Horario": "1",
+            "ID": "12345",
+            "Nombre": "Miguel Castro",
+            "Horario": "1, 2",
             "Ruta": "NodeJS"
         },
         {
-            "ID": "421",
-            "Nombre": "Mariana",
-            "Horario": "1",
-            "Ruta": "si"
-        },
-        {
-            "ID": "89",
-            "Nombre": "MarianaT",
-            "Horario": "1",
-            "Ruta": "PHP"
+            "ID": "54",
+            "Nombre": "Ejemplo",
+            "Horario": "1234",
+            "Ruta": "NodeJS"
         }
     ],
     "rutas": [
         {
             "Nombre": "NodeJS",
             "Modulos": [
-                "Fundamentos de programacion"
+                "Fundamentos de Programacion"
             ],
             "Codigo": "1"
-        },
-        {
-            "Nombre": "Java",
-            "Modulos": [
-                "Fundamentos de programacion",
-                "Bases de Datos"
-            ],
-            "Codigo": "2"
         }
     ],
     "modulos": [
         {
-            "Nombre": "Fundamentos de programacion",
+            "Nombre": "Fundamentos de Programacion",
             "Temario": [
                 "Variables",
                 "Tipos de Datos",
                 "Condicionales",
-                "Bucles"
+                "Ciclos",
+                "Bucles",
+                "Python"
             ],
-            "Codigo": "1"
-        },
-        {
-            "Nombre": "Bases de Datos",
-            "Temario": [
-                "MongoDB",
-                "SQL",
-                "MySQL"
-            ],
-            "Codigo": "2"
+            "Codigo": "1",
+            "Prioridad": "Principal"
         }
     ]
 }
