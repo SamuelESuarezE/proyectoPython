@@ -101,27 +101,30 @@ def edit():
             Codigo de ruta: {rutasList[cod].get("Codigo")}
             """)
             print("¿Esta seguro que este es el ruta que desea editar?\n\t1. Si\n\t2. No\n\t0. Salir")
-            opc = int(input())
+            opc = input()
+            try:
+                opc = int(opc)
+                match(opc):
+                    case 1:
+                        system("clear")
+                        rutasList[cod]["Nombre"] = input("Nombre de ruta: ")
+                        rutasList[cod]["Modulos"] = input("Modulos: ")
+                        rutasList[cod]["Codigo"] = input("Codigo: ")
 
-            match(opc):
-                case 1:
-                    system("clear")
-                    rutasList[cod]["Nombre"] = input("Nombre de ruta: ")
-                    rutasList[cod]["Modulos"] = input("Modulos: ")
-                    rutasList[cod]["Codigo"] = input("Codigo: ")
-
-                    with open("modules/storage/data.json", "w") as f:
-                        data = json.dumps(baseDeDatos, indent=4)
-                        f.write(data)
-                    system("clear")
-                    print("Ruta editada.")
-                    break
-                case 2:
-                    system("clear")
-                case 0:
-                    system("clear")
-                    break
-
+                        with open("modules/storage/data.json", "w") as f:
+                            data = json.dumps(baseDeDatos, indent=4)
+                            f.write(data)
+                        system("clear")
+                        print("Ruta editada.")
+                        break
+                    case 2:
+                        system("clear")
+                    case 0:
+                        system("clear")
+                        break
+            except ValueError:
+                system("clear")
+                noValid(opc)
         except StopIteration:
             system("clear")
             print("Error: Ruta no encontrada.")
@@ -144,25 +147,28 @@ def delete():
             Codigo de ruta: {rutasList[cod].get("Codigo")}
             """)
             print("¿Esta seguro que este es el ruta que desea eliminar?\n\t1. Si\n\t2. No\n\t0. Salir")
-            opc = int(input())
+            opc = input()
+            try:
+                opc = int(opc)
+                match(opc):
+                    case 1:
+                        system("clear")
+                        rutasList.pop(cod)
 
-            match(opc):
-                case 1:
-                    system("clear")
-                    rutasList.pop(cod)
-
-                    with open("modules/storage/data.json", "w") as f:
-                        data = json.dumps(baseDeDatos, indent=4)
-                        f.write(data)
-                    system("clear")
-                    print("Ruta eliminada.")
-                    break
-                case 2:
-                    system("clear")
-                case 0:
-                    system("clear")
-                    break
-
+                        with open("modules/storage/data.json", "w") as f:
+                            data = json.dumps(baseDeDatos, indent=4)
+                            f.write(data)
+                        system("clear")
+                        print("Ruta eliminada.")
+                        break
+                    case 2:
+                        system("clear")
+                    case 0:
+                        system("clear")
+                        break
+            except ValueError:
+                system("clear")
+                noValid(opc)
         except StopIteration:
             system("clear")
             print("Error: Ruta no encontrada.")
