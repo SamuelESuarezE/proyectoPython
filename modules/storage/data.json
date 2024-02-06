@@ -35,6 +35,27 @@
                 "Fundamentos de Programacion"
             ],
             "Codigo": "1"
+        },
+        {
+            "Nombre": "Java",
+            "Modulos": [
+                "Fundamentos de Programacion",
+                "Desarrollo Web"
+            ],
+            "Codigo": "2"
+        },
+        {
+            "Nombre": "Mariana",
+            "Modulos": [
+                "Fundamentos de Programacion",
+                "Mariana"
+            ],
+            "Codigo": "55"
+        },
+        {
+            "Nombre": "HolaEjemplo",
+            "Modulos": [],
+            "Codigo": "121"
         }
     ],
     "modulos": [
@@ -49,6 +70,26 @@
                 "Python"
             ],
             "Codigo": "1",
+            "Prioridad": "Principal"
+        },
+        {
+            "Nombre": "Desarrollo Web",
+            "Temario": [
+                "html",
+                "css",
+                "javascript"
+            ],
+            "Codigo": "3",
+            "Prioridad": "Principal"
+        },
+        {
+            "Nombre": "Mariana",
+            "Temario": [
+                "linda",
+                "se traba",
+                "dice que ya no se traba"
+            ],
+            "Codigo": "5",
             "Prioridad": "Principal"
         }
     ]

@@ -72,7 +72,7 @@ def mostrarModulos():
         modulosList = baseDeDatos["modulos"]
     
     while True:
-        print("Modulos: Digite los codigos que desea incluir separados por comas (',')")
+        print("Modulos: Digite los modulos que desea incluir separados por comas (','):")
         for modulo in modulosList:
             print(f"\t{modulo.get('Codigo')}. {modulo.get('Nombre')}")
         modulosSeleccionado = input()
@@ -80,20 +80,16 @@ def mostrarModulos():
 
         modulosDeRuta = []
         
-        for x, modulo in zip(range(len(modulosSeleccionado)), modulosList):
-            try:
-                if modulo.get("Codigo") == modulosSeleccionado[x]:
-                    modulosDeRuta.append(modulo.get("Nombre"))
-            except IndexError:
-                print("Atencion! - Hubo modulo/s no encontrado/s")
-        return modulosDeRuta
+        for modulo in modulosList:
+            if modulo.get("Codigo") in modulosSeleccionado:
+                modulosDeRuta.append(modulo.get("Nombre"))
+            else: 
+                moduloNoEncontrado = True
 
-    with open("modules/storage/data.json", "r") as f:
-        baseDeDatos = json.loads(f.read())
-        modulosList = baseDeDatos["modulos"]
-    temasList = modulosList[codigo]
-    for i, tema in enumerate(temasList):
-        print(f"\t{i+1}. {tema}")
+        if moduloNoEncontrado:
+            print("Error, hubo modulo/s no encontrado/s")
+        else:
+            return modulosDeRuta
 
 def search():
     with open("modules/storage/data.json", "r") as f:
