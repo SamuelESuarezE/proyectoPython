@@ -1,19 +1,6 @@
 {
     "campers": [
         {
-            "ID": "1127961146",
-            "Nombres": "Samuel Enrique",
-            "Apellidos": "Suarez Estupi\u00f1an",
-            "Direccion": "Conjunto Monteverdi Torre 5 Apto 601",
-            "Acudiente": {
-                "Nombre": "Jorge Suarez",
-                "ID": "7123721"
-            },
-            "Celular": "3185695249",
-            "Telefono_Fijo": "",
-            "Estado": "Preinscrito"
-        },
-        {
             "ID": "1098665605",
             "Nombres": "Mariana Traslavi\u00f1a",
             "Apellidos": "Sarmiento",
@@ -24,7 +11,8 @@
             },
             "Celular": "3182313",
             "Telefono_Fijo": "",
-            "Estado": "Preinscrito"
+            "Estado": "Preinscrito",
+            "Ruta": "python"
         }
     ],
     "trainers": [
@@ -73,6 +61,13 @@
                 "Desarrollo Web"
             ],
             "Codigo": "10"
+        },
+        {
+            "Nombre": "python",
+            "Modulos": [
+                "Fundamentos de Programacion"
+            ],
+            "Codigo": "22"
         }
     ],
     "modulos": [
@@ -108,6 +103,23 @@
             ],
             "Codigo": "5",
             "Prioridad": "Principal"
+        }
+    ],
+    "salas": [
+        {
+            "Nombre": "Sputnik",
+            "Codigo": "1",
+            "Capacidad": 33
+        },
+        {
+            "Nombre": "Apolo",
+            "Codigo": "2",
+            "Capacidad": 33
+        },
+        {
+            "Nombre": "Artemis",
+            "Codigo": "3",
+            "Capacidad": 33
         }
     ]
 }

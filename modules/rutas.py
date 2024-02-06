@@ -12,7 +12,7 @@ def menu():
         print("""
      ____  _  _ ____ __  ____ 
     (  _ \/ )( (_  _) _\/ ___)
-     )   /) \/ ( )(/    \___ \
+     )   /) \/ ( )(/    \___ \\
     (__\_)\____/(__)_/\_(____/
     """)
         print("\t1. Registrar Ruta\n\t2. Lista de Rutas\n\t3. Editar Ruta\n\t4. Eliminar Ruta\n\t5. Modulos\n\t0. Salir")

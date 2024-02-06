@@ -1,4 +1,9 @@
-from random import randint
+camper = {
+    "nombre":"samuel"
+}
 
-dia = randint(1,30)
-print(dia)
+print(camper)
+
+camper["Ruta"] = "NodeJS"
+
+print(camper)
