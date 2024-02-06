@@ -8,11 +8,11 @@ with open("modules/storage/data.json", "r") as f:
 
 def menu():
     while True:
-        print("""     _______________________________________
-    |                                       |
-    |                CAMPERS                |
-    |_______________________________________|
-    """)
+        print("""
+      ___   __   _  _  ____  ____  ____  ____ 
+     / __) / _\ ( \/ )(  _ \(  __)(  _ \/ ___)
+    ( (__ /    \/ \/ \ ) __/ ) _)  )   /\___ \\
+     \___)\_/\_/\_)(_/(__)  (____)(__\_)(____/\n""")
         print("\t1. Registrar Camper\n\t2. Lista de Campers\n\t3. Editar Camper\n\t4. Eliminar Camper\n\t0. Salir")
         opc = input()
 
@@ -58,7 +58,7 @@ def save():
         },
         "Celular": input("Celular: "),
         "Telefono_Fijo": input("Telefono fijo: "),
-        "Estado": "Preinscrito"
+        "Estado": "Inscrito"
     }
     for camp in campersList:
         if info.get("ID") == camp.get("ID"):
@@ -175,7 +175,6 @@ def edit():
                         campersList[cod]["Acudiente"]["ID"] = input("(Acudiente) N° de identificacion: ")
                         campersList[cod]["Celular"] = input("Celular: ")
                         campersList[cod]["Telefono_Fijo"] = input("Telefono fijo: ")
-                        campersList[cod]["Estado"] = "Preinscrito"
 
                         with open("modules/storage/data.json", "w") as f:
                             data = json.dumps(baseDeDatos, indent=4)

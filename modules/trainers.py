@@ -5,15 +5,17 @@ import json
 with open("modules/storage/data.json", "r") as f:
     baseDeDatos = json.loads(f.read())
     trainersList = baseDeDatos["trainers"]
+    rutasList = baseDeDatos["rutas"]
 
 def menu():
     while True:
-        print("""     _______________________________________
-    |                                       |
-    |               TRAINERS                |
-    |_______________________________________|
+        print("""
+     ____  ____   __   __  __ _  ____  ____  ____ 
+    (_  _)(  _ \ / _\ (  )(  ( \(  __)(  _ \/ ___)
+      )(   )   //    \ )( /    / ) _)  )   /\___ \\
+     (__) (__\_)\_/\_/(__)\_)__)(____)(__\_)(____/
     """)
-        print("\t1. Registrar Trainer\n\t2. Lista de Trainers\n\t3. Editar Trainer\n\t4. Eliminar Trainer\n\t0. Salir")
+        print("\t1. Registrar Trainer\n\t2. Lista de Trainers\n\t3. Ver Trainers segun Ruta\n\t4. Editar Trainer\n\t5. Eliminar Trainer\n\t0. Salir")
         opc = input()
 
         try:
@@ -27,8 +29,11 @@ def menu():
                     search()
                 case 3:
                     system("clear")
-                    edit()
+                    trainersSegunRuta()
                 case 4:
+                    system("clear")
+                    edit()
+                case 5:
                     system("clear")
                     delete()
                 case 0:
@@ -81,6 +86,42 @@ def mostrarRutas():
         if ruta.get("Codigo") in rutaSeleccionada:
             rutasGuardadas.append(ruta.get("Nombre"))
     return rutasGuardadas
+
+def trainersSegunRuta():
+    while True:
+        with open("modules/storage/data.json", "r") as f:
+            baseDeDatos = json.loads(f.read())
+            rutasList = baseDeDatos["rutas"]
+            trainersList = baseDeDatos["trainers"]
+
+        print("""         _______________________________________
+        |                                       |
+        |     LISTA DE TRAINERS SEGUN RUTA      |
+        |_______________________________________|
+        """)
+        for ruta in rutasList:
+            print(f"\t{ruta.get('Codigo')}. {ruta.get('Nombre')}")
+        print("\t0. Salir")
+
+        cod=input()
+
+        system("clear")
+
+        if cod == "0":
+            system("clear")
+            break
+  
+        for x, trainer in enumerate(trainersList):
+            for ruta in rutasList:
+                if cod == ruta.get("Codigo") and (ruta.get("Nombre") in trainer.get("Ruta")):
+                    print(f"""
+            ID: {trainersList[x].get("ID")}
+            Nombre: {trainersList[x].get("Nombre")}
+            Horario: {trainersList[x].get("Horario")}
+            Ruta: {trainersList[x].get("Ruta")}
+            """)
+
+
 
 
 def search():

@@ -9,10 +9,11 @@ with open("modules/storage/data.json", "r") as f:
 
 def menu():
     while True:
-        print("""     _______________________________________
-    |                                       |
-    |        RUTAS DE ENTRENAMIENTO         |
-    |_______________________________________|
+        print("""
+     ____  _  _ ____ __  ____ 
+    (  _ \/ )( (_  _) _\/ ___)
+     )   /) \/ ( )(/    \___ \
+    (__\_)\____/(__)_/\_(____/
     """)
         print("\t1. Registrar Ruta\n\t2. Lista de Rutas\n\t3. Editar Ruta\n\t4. Eliminar Ruta\n\t5. Modulos\n\t0. Salir")
         opc = input()
@@ -195,10 +196,11 @@ def delete():
 
 def modulos():
     while True:
-        print("""     _______________________________________
-    |                                       |
-    |                MODULOS                |
-    |_______________________________________|
+        print("""
+     _  _   __  ____  _  _  __     __   ____ 
+    ( \/ ) /  \(    \/ )( \(  )   /  \ / ___)
+    / \/ \(  O )) D () \/ (/ (_/\(  O )\___ \\
+    \_)(_/ \__/(____/\____/\____/ \__/ (____/
     """)
         print("\t1. Registrar Modulo\n\t2. Lista de Modulos\n\t3. Editar Modulo\n\t4. Eliminar Modulo\n\t0. Salir")
         opc = input()
