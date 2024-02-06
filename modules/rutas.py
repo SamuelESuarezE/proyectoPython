@@ -83,11 +83,6 @@ def mostrarModulos():
         for modulo in modulosList:
             if modulo.get("Codigo") in modulosSeleccionado:
                 modulosDeRuta.append(modulo.get("Nombre"))
-            else: 
-                moduloNoEncontrado = True
-
-        if moduloNoEncontrado:
-            print("Error, hubo modulo/s no encontrado/s")
         else:
             return modulosDeRuta
 

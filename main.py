@@ -13,7 +13,7 @@ while True:
     """)
     print("\t1. Campers\n\t2. Trainers\n\t3. Asignacion\n\t4. Rutas de aprendizaje y modulos\n\t5. Planillas academicas\n\t0. Salir")
     opc = input()
-
+ 
     try:
         opc = int(opc)
         match(opc):

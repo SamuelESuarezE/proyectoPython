@@ -26,6 +26,15 @@
             "Nombre": "Ejemplo",
             "Horario": "1234",
             "Ruta": "NodeJS"
+        },
+        {
+            "ID": "565",
+            "Nombre": "Joseph",
+            "Horario": "1,2",
+            "Ruta": [
+                "NodeJS",
+                "ReactJS"
+            ]
         }
     ],
     "rutas": [
@@ -45,17 +54,12 @@
             "Codigo": "2"
         },
         {
-            "Nombre": "Mariana",
+            "Nombre": "ReactJS",
             "Modulos": [
                 "Fundamentos de Programacion",
-                "Mariana"
+                "Desarrollo Web"
             ],
-            "Codigo": "55"
-        },
-        {
-            "Nombre": "HolaEjemplo",
-            "Modulos": [],
-            "Codigo": "121"
+            "Codigo": "10"
         }
     ],
     "modulos": [

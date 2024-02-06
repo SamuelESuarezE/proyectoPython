@@ -68,18 +68,20 @@ def mostrarRutas():
     with open("modules/storage/data.json", "r") as f:
         baseDeDatos = json.loads(f.read())
         rutasList = baseDeDatos["rutas"]
+    
+    print("Ruta:")
+    for ruta in rutasList:
+        print(f"\t{ruta.get('Codigo')}. {ruta.get('Nombre')}")
+    rutaSeleccionada = input()
+    rutaSeleccionada = rutaSeleccionada.split(",")
+    
+    rutasGuardadas = []
 
-    while True:
-        print("Ruta:")
-        for ruta in rutasList:
-            print(f"\t{ruta.get('Codigo')}. {ruta.get('Nombre')}")
-        rutaSeleccionada = input()
-        
-        for ruta in rutasList:
-            if ruta.get("Codigo") == rutaSeleccionada:
-                return ruta.get("Nombre")
-            else:
-                print("Ruta no encontrada.")
+    for ruta in rutasList:
+        if ruta.get("Codigo") in rutaSeleccionada:
+            rutasGuardadas.append(ruta.get("Nombre"))
+    return rutasGuardadas
+
 
 def search():
     system("clear")
@@ -125,7 +127,7 @@ def edit():
                         trainersList[cod]["ID"] = input("N° de identificacion: ")
                         trainersList[cod]["Nombre"] = input("Nombre completo: ")
                         trainersList[cod]["Horario"] = input("Horario:\n\t1. Mañana: 6 am a 10 am\n\t2. Mañana: 10 am a 2 pm\n\t3. Tarde: 2 pm a 6 pm\n\t4. Tarde: 6 pm a 10 pm\n")
-                        trainersList[cod]["Ruta"] = input("Ruta:\n\t1. Java\n\t2. Node JS\n\t3. NetCore\n")
+                        trainersList[cod]["Ruta"] = mostrarRutas()
 
                         with open("modules/storage/data.json", "w") as f:
                             data = json.dumps(baseDeDatos, indent=4)
