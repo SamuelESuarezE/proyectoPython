@@ -11,13 +11,26 @@
             },
             "Celular": "123",
             "Telefono_Fijo": "123",
-            "Estado": "Inscrito",
-            "Ruta": "NodeJS",
+            "Estado": "Aprobado",
+            "Ruta": "python",
             "Sala": "Sputnik",
             "Trainer": "Miguel Castro",
-            "fechaInicio": "hoy",
-            "fechaFin": "ma\u00f1ana",
-            "Horario": "3"
+            "fechaInicio": "anteayer",
+            "fechaFin": "antema\u00f1ana",
+            "Horario": "4"
+        },
+        {
+            "ID": "89",
+            "Nombres": "ejemplo",
+            "Apellidos": "ejemplo",
+            "Direccion": "",
+            "Acudiente": {
+                "Nombre": "",
+                "ID": ""
+            },
+            "Celular": "",
+            "Telefono_Fijo": "",
+            "Estado": "Inscrito"
         }
     ],
     "trainers": [
