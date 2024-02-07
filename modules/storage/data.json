@@ -1,18 +1,23 @@
 {
     "campers": [
         {
-            "ID": "1098665605",
-            "Nombres": "Mariana Traslavi\u00f1a",
-            "Apellidos": "Sarmiento",
-            "Direccion": "Villa Renacer Torre X Apto Y",
+            "ID": "123",
+            "Nombres": "123",
+            "Apellidos": "123",
+            "Direccion": "123",
             "Acudiente": {
-                "Nombre": "",
-                "ID": ""
+                "Nombre": "123",
+                "ID": "123"
             },
-            "Celular": "3182313",
-            "Telefono_Fijo": "",
-            "Estado": "Preinscrito",
-            "Ruta": "python"
+            "Celular": "123",
+            "Telefono_Fijo": "123",
+            "Estado": "Inscrito",
+            "Ruta": "NodeJS",
+            "Sala": "Sputnik",
+            "Trainer": "Miguel Castro",
+            "fechaInicio": "hoy",
+            "fechaFin": "ma\u00f1ana",
+            "Horario": "3"
         }
     ],
     "trainers": [
@@ -35,6 +40,17 @@
             "Ruta": [
                 "NodeJS",
                 "ReactJS"
+            ]
+        },
+        {
+            "ID": "172321",
+            "Nombre": "cualquiera",
+            "Horario": "1",
+            "Ruta": [
+                "NodeJS",
+                "Java",
+                "ReactJS",
+                "python"
             ]
         }
     ],
@@ -109,17 +125,22 @@
         {
             "Nombre": "Sputnik",
             "Codigo": "1",
-            "Capacidad": 33
+            "Capacidad": 33,
+            "campers": [
+                "123"
+            ]
         },
         {
             "Nombre": "Apolo",
             "Codigo": "2",
-            "Capacidad": 33
+            "Capacidad": 33,
+            "campers": []
         },
         {
             "Nombre": "Artemis",
             "Codigo": "3",
-            "Capacidad": 33
+            "Capacidad": 33,
+            "campers": []
         }
     ]
 }

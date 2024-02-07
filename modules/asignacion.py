@@ -30,7 +30,6 @@ def menu():
         campersList = baseDeDatos["campers"]
         trainersList = baseDeDatos["trainers"]
         rutasList = baseDeDatos["rutas"]
-        modulosList = baseDeDatos["modulos"]
         salasList = baseDeDatos["salas"]
     print("""
       __   ____  __  ___  __ _   __    ___  __  __   __ _ 
@@ -55,6 +54,19 @@ def menu():
             for ruta in rutasList:
                 if info.get("CodigoRuta") == ruta.get("Codigo"):
                     camper["Ruta"] = ruta.get("Nombre")
+            for sala in salasList:
+                if info.get("CodigoSala") == sala.get("Codigo"):
+                    camper["Sala"] = sala.get("Nombre")
+                    sala["campers"].append(id)
+            for trainer in trainersList:
+                if info.get("ID-trainer") == trainer.get("ID"):
+                    camper["Trainer"] = trainer.get("Nombre")
+            camper["fechaInicio"]=info.get("fechaInicio")
+            camper["fechaFin"]=info.get("fechaFin")
+            camper["Horario"]=info.get("Horario")
+
+            
+    
     
     with open("modules/storage/data.json", "w") as f:
         data = json.dumps(baseDeDatos, indent=4)

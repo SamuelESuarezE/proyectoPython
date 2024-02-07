@@ -119,6 +119,10 @@ def searchMenu():
 
 
 def search():
+    with open("modules/storage/data.json", "r") as f:
+        baseDeDatos = json.loads(f.read())
+        campersList = baseDeDatos["campers"]
+
     print("""     _______________________________________
     |                                       |
     |           TODOS LOS CAMPERS           |
@@ -134,6 +138,10 @@ def search():
         Celular: {camp.get("Celular")}
         Telefono fijo: {camp.get("Telefono_Fijo")}
         Estado: {camp.get("Estado")}
+        Ruta: {camp.get("Ruta")}
+        Sala: {camp.get("Sala")}
+        Trainer: {camp.get("Trainer")}
+        Horario: {camp.get("Horario")}
         """)
 
 def edit():
@@ -158,6 +166,10 @@ def edit():
             Celular: {campersList[cod].get("Celular")}
             Telefono fijo: {campersList[cod].get("Telefono_Fijo")}
             Estado: {campersList[cod].get("Estado")}
+            Ruta: {campersList[cod].get("Ruta")}
+            Sala: {campersList[cod].get("Sala")}
+            Trainer: {campersList[cod].get("Trainer")}
+            Horario: {campersList[cod].get("Horario")}
             """)
             print("¿Esta seguro que este es el camper que desea editar?\n\t1. Si\n\t2. No\n\t0. Salir")
             opc = input()
@@ -216,6 +228,10 @@ def delete():
             Celular: {campersList[cod].get("Celular")}
             Telefono fijo: {campersList[cod].get("Telefono_Fijo")}
             Estado: {campersList[cod].get("Estado")}
+            Ruta: {campersList[cod].get("Ruta")}
+            Sala: {campersList[cod].get("Sala")}
+            Trainer: {campersList[cod].get("Trainer")}
+            Horario: {campersList[cod].get("Horario")}
             """)
             print("¿Esta seguro que este es el camper que desea eliminar?\n\t1. Si\n\t2. No\n\t0. Salir")
             opc = input()
