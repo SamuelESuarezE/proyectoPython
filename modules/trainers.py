@@ -15,7 +15,7 @@ def menu():
       )(   )   //    \ )( /    / ) _)  )   /\___ \\
      (__) (__\_)\_/\_/(__)\_)__)(____)(__\_)(____/
     """)
-        print("\t1. Registrar Trainer\n\t2. Lista de Trainers\n\t3. Ver Trainers segun Ruta\n\t4. Editar Trainer\n\t5. Eliminar Trainer\n\t0. Salir")
+        print("\t1. Registrar Trainer\n\t2. Lista de Trainers\n\t3. Ver Trainers segun Ruta\n\t4. Editar Trainer\n\t5. Eliminar Trainer\n\t6. Ver campers de un trainer\n\t0. Salir")
         opc = input()
 
         try:
@@ -36,6 +36,9 @@ def menu():
                 case 5:
                     system("clear")
                     delete()
+                case 6:
+                    system("clear")
+                    campersDeUnTrainer()
                 case 0:
                     system("clear")
                     break
@@ -45,6 +48,25 @@ def menu():
         except ValueError:
             system("clear")
             noValid(opc)
+
+def campersDeUnTrainer():
+    with open("modules/storage/data.json","r") as f:
+        baseDeDatos = json.loads(f.read())
+        trainersList = baseDeDatos["trainers"]
+        campersList = baseDeDatos["campers"]
+    print("""     _______________________________________
+    |                                       |
+    |      VER CAMPERS DE UN TRAINER        |
+    |_______________________________________|
+    """)
+    
+    id = input("Ingrese la ID del trainer: ")
+    for trainer in trainersList:
+        if trainer.get("ID") == id:
+            for x, campers in enumerate(campersList):
+                print(f"{trainer['Campers'][x].get('ID')}. {trainer['Campers'][x].get('Nombre')}")
+    input("\nPresione enter para continuar...")
+    system("clear")
 def save():
     print("""     _______________________________________
     |                                       |
@@ -88,12 +110,11 @@ def mostrarRutas():
     return rutasGuardadas
 
 def trainersSegunRuta():
+    with open("modules/storage/data.json", "r") as f:
+        baseDeDatos = json.loads(f.read())
+        rutasList = baseDeDatos["rutas"]
+        trainersList = baseDeDatos["trainers"]
     while True:
-        with open("modules/storage/data.json", "r") as f:
-            baseDeDatos = json.loads(f.read())
-            rutasList = baseDeDatos["rutas"]
-            trainersList = baseDeDatos["trainers"]
-
         print("""         _______________________________________
         |                                       |
         |     LISTA DE TRAINERS SEGUN RUTA      |

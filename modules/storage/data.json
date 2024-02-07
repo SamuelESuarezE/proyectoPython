@@ -1,28 +1,9 @@
 {
     "campers": [
         {
-            "ID": "123",
-            "Nombres": "123",
-            "Apellidos": "123",
-            "Direccion": "123",
-            "Acudiente": {
-                "Nombre": "123",
-                "ID": "123"
-            },
-            "Celular": "123",
-            "Telefono_Fijo": "123",
-            "Estado": "Aprobado",
-            "Ruta": "python",
-            "Sala": "Sputnik",
-            "Trainer": "Miguel Castro",
-            "fechaInicio": "anteayer",
-            "fechaFin": "antema\u00f1ana",
-            "Horario": "4"
-        },
-        {
-            "ID": "89",
-            "Nombres": "ejemplo",
-            "Apellidos": "ejemplo",
+            "ID": "1234",
+            "Nombres": "Samuel Enrique",
+            "Apellidos": "Suarez Estupi\u00f1an",
             "Direccion": "",
             "Acudiente": {
                 "Nombre": "",
@@ -30,40 +11,16 @@
             },
             "Celular": "",
             "Telefono_Fijo": "",
-            "Estado": "Inscrito"
+            "Estado": "Aprobado"
         }
     ],
     "trainers": [
         {
-            "ID": "12345",
+            "ID": "123",
             "Nombre": "Miguel Castro",
-            "Horario": "1, 2",
-            "Ruta": "NodeJS"
-        },
-        {
-            "ID": "54",
-            "Nombre": "Ejemplo",
-            "Horario": "1234",
-            "Ruta": "NodeJS"
-        },
-        {
-            "ID": "565",
-            "Nombre": "Joseph",
-            "Horario": "1,2",
-            "Ruta": [
-                "NodeJS",
-                "ReactJS"
-            ]
-        },
-        {
-            "ID": "172321",
-            "Nombre": "cualquiera",
             "Horario": "1",
             "Ruta": [
-                "NodeJS",
-                "Java",
-                "ReactJS",
-                "python"
+                "Java"
             ]
         }
     ],
@@ -132,6 +89,15 @@
             ],
             "Codigo": "5",
             "Prioridad": "Principal"
+        },
+        {
+            "Nombre": "henry",
+            "Temario": [
+                "ing",
+                " campus"
+            ],
+            "Codigo": "11",
+            "Prioridad": "Principal"
         }
     ],
     "salas": [
@@ -140,14 +106,17 @@
             "Codigo": "1",
             "Capacidad": 33,
             "campers": [
-                "123"
+                "123",
+                "12345"
             ]
         },
         {
             "Nombre": "Apolo",
             "Codigo": "2",
             "Capacidad": 33,
-            "campers": []
+            "campers": [
+                "123456"
+            ]
         },
         {
             "Nombre": "Artemis",

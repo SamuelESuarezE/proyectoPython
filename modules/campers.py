@@ -42,6 +42,9 @@ def menu():
             noValid(opc)
 
 def save():
+    with open("modules/storage/data.json", "r") as f:
+        baseDeDatos = json.loads(f.read())
+        campersList = baseDeDatos["campers"]
     print("""     _______________________________________
     |                                       |
     |           REGISTRO DE CAMPER          |

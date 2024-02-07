@@ -72,17 +72,27 @@ def menu():
                     for trainer in trainersList:
                         if info.get("ID-trainer") == trainer.get("ID"):
                             camper["Trainer"] = trainer.get("Nombre")
+                            info = {
+                                "ID": camper.get("ID"),
+                                "Nombre": (f"{camper.get('Nombres')} {camper.get('Apellidos')}")
+                            }
+                            trainer["Campers"] = []
+                            trainer["Campers"].append(info) 
+                    
                     camper["fechaInicio"]=info.get("fechaInicio")
                     camper["fechaFin"]=info.get("fechaFin")
                     camper["Horario"]=info.get("Horario")
+                    
+                    with open("modules/storage/data.json", "w") as f:
+                        data = json.dumps(baseDeDatos, indent=4)
+                        f.write(data)
+
+                    print("\nCamper matriculado correctamente.")
                 else:
-                    return print("\n- El camper no esta aprobado.")
-    
-        with open("modules/storage/data.json", "w") as f:
-            data = json.dumps(baseDeDatos, indent=4)
-            f.write(data)
+                    print("\n- El camper no esta aprobado.")
+        
         print("\n- Si el sistema no permite asignar al camper, es porque el camper no esta registrado.")
-        input("\nPresione enter para continuar...")
+        input("Presione enter para continuar...")
         break
 
     

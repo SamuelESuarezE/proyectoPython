@@ -244,7 +244,7 @@ def save_modulos():
     }
 
     info["Temario"] = info["Temario"].split(",")
-
+    
     for modulo in modulosList:
         if info.get("Codigo") == modulo.get("Codigo"):
             return system("clear"), print("Este modulo ya esta registrada.")
