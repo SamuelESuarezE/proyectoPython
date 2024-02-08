@@ -1,26 +1,54 @@
 {
     "campers": [
         {
-            "ID": "1234",
-            "Nombres": "Samuel Enrique",
-            "Apellidos": "Suarez Estupi\u00f1an",
-            "Direccion": "",
+            "ID": "1098665605",
+            "Nombres": "Mariana",
+            "Apellidos": "Traslavi\u00f1a Sarmiento",
+            "Direccion": "Villa Renacer",
             "Acudiente": {
-                "Nombre": "",
-                "ID": ""
+                "Nombre": "Elba Sarmiento",
+                "ID": "60263338"
             },
             "Celular": "",
             "Telefono_Fijo": "",
-            "Estado": "Aprobado"
+            "Estado": "Aprobado",
+            "fechaInicio": "ayer",
+            "fechaFin": "hoy",
+            "Horario": "2",
+            "Ruta": "NodeJS",
+            "Sala": "Apolo",
+            "Trainer": "Miguel Castro"
         }
     ],
     "trainers": [
         {
-            "ID": "123",
+            "ID": "1234",
             "Nombre": "Miguel Castro",
-            "Horario": "1",
+            "Horario": "2",
+            "Ruta": [
+                "NodeJS"
+            ],
+            "Campers": [
+                {
+                    "ID": "1098665605",
+                    "Nombre": "Mariana Traslavi\u00f1a Sarmiento"
+                }
+            ]
+        },
+        {
+            "ID": "789",
+            "Nombre": "Yolver Pardo",
+            "Horario": "4",
             "Ruta": [
                 "Java"
+            ]
+        },
+        {
+            "ID": "892823",
+            "Nombre": "Silvia Moreno",
+            "Horario": "4",
+            "Ruta": [
+                "ReactJS"
             ]
         }
     ],
@@ -105,24 +133,30 @@
             "Nombre": "Sputnik",
             "Codigo": "1",
             "Capacidad": 33,
-            "campers": [
-                "123",
-                "12345"
-            ]
+            "estudiantes1": [],
+            "estudiantes2": [],
+            "estudiantes3": [],
+            "estudiantes4": []
         },
         {
             "Nombre": "Apolo",
             "Codigo": "2",
             "Capacidad": 33,
-            "campers": [
-                "123456"
-            ]
+            "estudiantes1": [],
+            "estudiantes2": [
+                "1098665605"
+            ],
+            "estudiantes3": [],
+            "estudiantes4": []
         },
         {
             "Nombre": "Artemis",
             "Codigo": "3",
             "Capacidad": 33,
-            "campers": []
+            "estudiantes1": [],
+            "estudiantes2": [],
+            "estudiantes3": [],
+            "estudiantes4": []
         }
     ]
 }

@@ -59,15 +59,27 @@ def campersDeUnTrainer():
     |      VER CAMPERS DE UN TRAINER        |
     |_______________________________________|
     """)
-    
-    id = input("Ingrese la ID del trainer: ")
     for trainer in trainersList:
-        if trainer.get("ID") == id:
-            for x, campers in enumerate(campersList):
-                print(f"{trainer['Campers'][x].get('ID')}. {trainer['Campers'][x].get('Nombre')}")
-    input("\nPresione enter para continuar...")
+        print(f"\tID: {trainer.get('ID')} | Nombre: {trainer.get('Nombre')}")
+        
+    id = input("\nIngrese la ID del trainer: ")
+    
+    for camper in campersList:
+        for trainer in trainersList:
+            if id == trainer.get('ID') and trainer.get('Nombre') == camper.get("Trainer"):
+                print(f"""
+                Documento: {camper.get("ID")}
+                Nombre: {camper.get("Nombres")} {camper.get("Apellidos")}
+                """)
+
+    input("Presione enter para continuar...")
     system("clear")
 def save():
+    with open("modules/storage/data.json", "r") as f:
+        baseDeDatos = json.loads(f.read())
+        trainersList = baseDeDatos["trainers"]
+        campersList = baseDeDatos["campers"]
+
     print("""     _______________________________________
     |                                       |
     |           REGISTRO DE TRAINER         |

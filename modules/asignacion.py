@@ -51,23 +51,50 @@ def menu():
                         "Horario": input("Digite codigo de horario:\n\t1. Mañana: 6 am a 10 am\n\t2. Mañana: 10 am a 2 pm\n\t3. Tarde: 2 pm a 6 pm\n\t4. Tarde: 6 pm a 10 pm\n"),
                     }
 
+                    camper["fechaInicio"]=info.get("fechaInicio")
+                    camper["fechaFin"]=info.get("fechaFin")
+                    camper["Horario"]=info.get("Horario")
+
                     for ruta in rutasList:
                         if info.get("CodigoRuta") == ruta.get("Codigo"):
                             camper["Ruta"] = ruta.get("Nombre")
 
                     for sala in salasList:
-                        if camper.get("ID") in sala["campers"]:
+                        if (camper.get("ID") in sala["estudiantes1"]) or (camper.get("ID") in sala["estudiantes2"]) or (camper.get("ID") in sala["estudiantes3"]) or (camper.get("ID") in sala["estudiantes4"]):
                             print("\n- El camper ya esta registrado en una sala de entrenamiento.")
                             print("- Si desea cambiar la sala, debe hacer el registro del camper nuevamente.")
                             break
                         else:
-                            if len(sala["campers"]) < sala.get("Capacidad"):
-                                if info.get("CodigoSala") == sala.get("Codigo"):
-                                    camper["Sala"] = sala.get("Nombre")
-                                    sala["campers"].append(id)
-                            else:
-                                print("\n - La sala asignada esta llena.")
-                                break
+                            if sala.get("Codigo") == info.get("CodigoSala"):
+                                match(info.get("Horario")):
+                                    case "1":
+                                        if len(sala["estudiantes1"]) < sala.get("Capacidad"):
+                                                camper["Sala"] = sala.get("Nombre")
+                                                sala["estudiantes1"].append(id)
+                                        else:
+                                            print("Error: la sala asignada se encuentra llena.")
+                                            break
+                                    case "2":
+                                        if len(sala["estudiantes2"]) < sala.get("Capacidad"):
+                                                camper["Sala"] = sala.get("Nombre")
+                                                sala["estudiantes2"].append(id)
+                                        else:
+                                            print("Error: la sala asignada se encuentra llena.")
+                                            break
+                                    case "3":
+                                        if len(sala["estudiantes3"]) < sala.get("Capacidad"):
+                                                camper["Sala"] = sala.get("Nombre")
+                                                sala["estudiantes3"].append(id)
+                                        else:
+                                            print("Error: la sala asignada se encuentra llena.")
+                                            break
+                                    case "4":
+                                        if len(sala["estudiantes4"]) < sala.get("Capacidad"):
+                                                camper["Sala"] = sala.get("Nombre")
+                                                sala["estudiantes4"].append(id)
+                                        else:
+                                            print("Error: la sala asignada se encuentra llena.")
+                                            break
 
                     for trainer in trainersList:
                         if info.get("ID-trainer") == trainer.get("ID"):
@@ -79,9 +106,7 @@ def menu():
                             trainer["Campers"] = []
                             trainer["Campers"].append(info) 
                     
-                    camper["fechaInicio"]=info.get("fechaInicio")
-                    camper["fechaFin"]=info.get("fechaFin")
-                    camper["Horario"]=info.get("Horario")
+
                     
                     with open("modules/storage/data.json", "w") as f:
                         data = json.dumps(baseDeDatos, indent=4)

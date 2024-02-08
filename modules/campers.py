@@ -68,7 +68,6 @@ def save():
             return system("clear"), print("Este camper ya esta registrado.")
         
     campersList.append(info)
-    baseDeDatos['campers']=campersList
 
     with open("modules/storage/data.json", "w") as f:
         data = json.dumps(baseDeDatos, indent=4)
