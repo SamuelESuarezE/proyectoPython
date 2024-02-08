@@ -11,7 +11,7 @@ def menu():
      ) __/)   /) \/ () _) ) _ (    \   ) D () _) 
     (__) (__\_)\____(____|____|_/\_/  (____(____)
           __  ____ _  _ __ ____ __ __  __ _ 
-         / _\(    ( \/ |  ) ___|  )  \(  ( \
+         / _\(    ( \/ |  ) ___|  )  \(  ( \\
         /    \) D ( \/ \)(\___ \)(  O )    /
         \_/\_(____|_)(_(__|____(__)__/\_)__)
 
@@ -32,7 +32,7 @@ def menu():
         data = json.dumps(baseDeDatos, indent=4)
         f.write(data)
                 
-    input("Presione enter para continuar...")
+    input("\nPresione enter para continuar...")
         
                 
     
