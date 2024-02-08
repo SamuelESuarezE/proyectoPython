@@ -6,6 +6,7 @@ with open("modules/storage/data.json", "r") as f:
     baseDeDatos = json.loads(f.read())
     rutasList = baseDeDatos["rutas"]
     modulosList = baseDeDatos["modulos"]
+    trainersList = baseDeDatos["trainers"]
 
 def menu():
     while True:
@@ -216,7 +217,7 @@ def modulos():
                     search_modules()
                 case 3:
                     system("clear")
-                    
+                    edit_modules()
                 case 4:
                     system("clear")
                     delete_modules()
@@ -229,7 +230,10 @@ def modulos():
         except ValueError:
             system("clear")
             noValid(opc)
-    
+
+                
+            
+
 def save_modulos():
     print("""     _______________________________________
     |                                       |
@@ -240,7 +244,8 @@ def save_modulos():
         "Nombre": input("Nombre: "),
         "Temario": input("Ingrese los temas de este modulo separados por comas (','): "),
         "Codigo": input("Codigo: "),
-        "Prioridad": mostrarPrioridad()
+        "Prioridad": mostrarPrioridad(),
+        "Notas": []
     }
 
     info["Temario"] = info["Temario"].split(",")

@@ -62,9 +62,10 @@ def menu():
 
                     for sala in salasList:
                         if (camper.get("ID") in sala["estudiantes1"]) or (camper.get("ID") in sala["estudiantes2"]) or (camper.get("ID") in sala["estudiantes3"]) or (camper.get("ID") in sala["estudiantes4"]):
-                            print("\n- El camper ya esta registrado en una sala de entrenamiento.")
-                            print("- Si desea cambiar la sala, debe hacer el registro del camper nuevamente.")
-                            break
+                            sala["estudiantes1"].remove(camper.get("ID"))
+                            sala["estudiantes2"].remove(camper.get("ID"))
+                            sala["estudiantes3"].remove(camper.get("ID"))
+                            sala["estudiantes4"].remove(camper.get("ID"))
                         else:
                             if sala.get("Codigo") == info.get("CodigoSala"):
                                 match(info.get("Horario")):
@@ -96,6 +97,7 @@ def menu():
                                         else:
                                             print("Error: la sala asignada se encuentra llena.")
                                             break
+                                    
 
                     for trainer in trainersList:
                         if info.get("ID-trainer") == trainer.get("ID"):
@@ -116,7 +118,7 @@ def menu():
                     print("\nCamper matriculado correctamente.")
                 else:
                     print("\n- El camper no esta aprobado.")
-        
+
         print("\n- Si el sistema no permite asignar al camper, es porque el camper no esta registrado.")
         input("Presione enter para continuar...")
         break

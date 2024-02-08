@@ -5,7 +5,107 @@ import modules.trainers as trainers
 import modules.rutas as rutas
 import modules.asignacion as asignacion
 import modules.registerPrueba as prueba
+import modules.calificarPrueba as calificarprueba
+import modules.reportes as reportes
+from time import sleep
 
+def carga():
+    system("clear")
+    print("""
+                    LOADING DATA...
+        ▄︻デ══━一💥
+    """)
+    sleep(0.1)
+    system("clear")
+    print("""
+                    LOADING DATA...
+        ▄︻デ══━一 -▶
+    """)
+    sleep(0.1)
+    system("clear")
+    print("""
+                    LOADING DATA...
+        ▄︻デ══━一 ---▶
+    """)
+    sleep(0.1)
+    system("clear")
+
+    print("""
+                    LOADING DATA...
+        ▄︻デ══━一 -----▶
+    """)
+    sleep(0.1)
+    system("clear")
+
+    print("""
+                    LOADING DATA...
+        ▄︻デ══━一 -------▶
+    """)
+    sleep(0.1)
+    system("clear")
+
+    print("""
+                    LOADING DATA...
+        ▄︻デ══━一 ---------▶
+    """)
+    sleep(0.1)
+    system("clear")
+
+    print("""
+                    LOADING DATA...
+        ▄︻デ══━一 -----------▶
+    """)
+    sleep(0.1)
+    system("clear")
+
+    print("""
+                    LOADING DATA...
+        ▄︻デ══━一 -------------▶
+    """)
+    sleep(0.1)
+    system("clear")
+
+    print("""
+                    LOADING DATA...
+        ▄︻デ══━一 ---------------▶
+    """)
+    sleep(0.1)
+    system("clear")
+
+    print("""
+                    LOADING DATA...
+        ▄︻デ══━一 -----------------▶
+    """)
+    sleep(0.1)
+    system("clear")
+
+    print("""
+                    LOADING DATA...
+        ▄︻デ══━一 -------------------▶
+    """)
+    sleep(0.1)
+    system("clear")
+
+    print("""
+                    LOADING DATA...
+        ▄︻デ══━一 ---------------------▶
+    """)
+    sleep(0.1)
+    system("clear")
+
+    print("""
+                    LOADING DATA...
+        ▄︻デ══━一 -----------------------▶
+    """)
+    sleep(0.1)
+    system("clear")
+
+    print("""
+                   LOADED SUCCESFULLY
+        ▄︻デ══━一 ------------------------- 💥
+    """)
+    sleep(1.0)
+carga()
 while True:
     system("clear")
     print("""
@@ -35,6 +135,12 @@ while True:
             case 5:
                 system("clear")
                 prueba.menu()
+            case 6:
+                system("clear")
+                calificarprueba.menu()
+            case 7:
+                system("clear")
+                reportes.menu()
             case 0:
                 system("clear")
                 break

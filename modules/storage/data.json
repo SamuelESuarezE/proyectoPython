@@ -1,120 +1,72 @@
 {
     "campers": [
         {
-            "ID": "12345",
-            "Nombres": "Samuel",
-            "Apellidos": "Suarez",
-            "Direccion": "",
+            "ID": "1127961146",
+            "Nombres": "Samuel Enrique",
+            "Apellidos": "Suarez Estupi\u00f1an",
+            "Direccion": "Conjunto Monteverdi",
             "Acudiente": {
-                "Nombre": "",
-                "ID": ""
+                "Nombre": "Jorge Suarez",
+                "ID": "7123721"
             },
-            "Celular": "",
+            "Celular": "3185695249",
             "Telefono_Fijo": "",
-            "Estado": "Inscrito"
+            "Estado": "Preinscrito"
         }
     ],
-    "trainers": [
-        {
-            "ID": "1234",
-            "Nombre": "Miguel Castro",
-            "Horario": "2",
-            "Ruta": [
-                "NodeJS"
-            ],
-            "Campers": []
-        },
-        {
-            "ID": "789",
-            "Nombre": "Yolver Pardo",
-            "Horario": "4",
-            "Ruta": [
-                "Java"
-            ]
-        },
-        {
-            "ID": "892823",
-            "Nombre": "Silvia Moreno",
-            "Horario": "4",
-            "Ruta": [
-                "ReactJS"
-            ]
-        }
-    ],
+    "trainers": [],
     "rutas": [
         {
             "Nombre": "NodeJS",
             "Modulos": [
-                "Fundamentos de Programacion"
+                "Fundamentos de Programacion",
+                "Desarrollo Web"
             ],
             "Codigo": "1"
         },
         {
             "Nombre": "Java",
             "Modulos": [
-                "Fundamentos de Programacion",
-                "Desarrollo Web"
+                "Fundamentos de Programacion"
             ],
             "Codigo": "2"
         },
         {
-            "Nombre": "ReactJS",
-            "Modulos": [
-                "Fundamentos de Programacion",
-                "Desarrollo Web"
-            ],
-            "Codigo": "10"
-        },
-        {
-            "Nombre": "python",
+            "Nombre": "NetCore",
             "Modulos": [
                 "Fundamentos de Programacion"
             ],
-            "Codigo": "22"
+            "Codigo": "3"
         }
     ],
     "modulos": [
         {
             "Nombre": "Fundamentos de Programacion",
             "Temario": [
-                "Variables",
-                "Tipos de Datos",
-                "Condicionales",
-                "Ciclos",
-                "Bucles",
-                "Python"
+                "Python",
+                " Variables",
+                " Condicionales",
+                " Ciclos",
+                " Funciones",
+                " Modulos"
             ],
             "Codigo": "1",
-            "Prioridad": "Principal"
+            "Prioridad": "Principal",
+            "Notas": []
         },
         {
             "Nombre": "Desarrollo Web",
             "Temario": [
-                "html",
-                "css",
-                "javascript"
+                "HTML",
+                "CSS",
+                "Flexbox",
+                "Grid",
+                "React",
+                "Tailwind"
             ],
-            "Codigo": "3",
-            "Prioridad": "Principal"
-        },
-        {
-            "Nombre": "Mariana",
-            "Temario": [
-                "linda",
-                "se traba",
-                "dice que ya no se traba"
-            ],
-            "Codigo": "5",
-            "Prioridad": "Principal"
-        },
-        {
-            "Nombre": "henry",
-            "Temario": [
-                "ing",
-                " campus"
-            ],
-            "Codigo": "11",
-            "Prioridad": "Principal"
+            "Codigo": "2",
+            "Prioridad": "Principal",
+            "Notas": []
         }
     ],
     "salas": [
@@ -132,9 +84,7 @@
             "Codigo": "2",
             "Capacidad": 33,
             "estudiantes1": [],
-            "estudiantes2": [
-                "1098665605"
-            ],
+            "estudiantes2": [],
             "estudiantes3": [],
             "estudiantes4": []
         },

@@ -5,6 +5,7 @@ import json
 with open("modules/storage/data.json", "r") as f:
     baseDeDatos = json.loads(f.read())
     campersList = baseDeDatos["campers"]
+    salasList = baseDeDatos["salas"]
 
 def menu():
     while True:
@@ -24,7 +25,7 @@ def menu():
                     save()
                 case 2:
                     system("clear")
-                    searchMenu()
+                    search()
                 case 3:
                     system("clear")
                     edit()
@@ -74,52 +75,6 @@ def save():
         f.write(data)
     return system("clear"), print("Camper Guardado.")
 
-
-def searchMenu():
-        while True:
-            print("""     _______________________________________
-    |                                       |
-    |           LISTA DE CAMPERS            |
-    |_______________________________________|""")
-            print("""
-        1. Ver todos los Campers
-        2. Ver Campers segun estado
-        3. Ver Campers segun ruta
-        4. Ver Campers segun trainer
-        5. Ver Campers segun horario y salon
-        0. Salir""")
-            opc = input()
-
-            try:
-                opc = int(opc)
-                match(opc):
-                    case 1:
-                        system("clear")
-                        search()
-                    case 2:
-                        system("clear")
-                        # TODO: Esto me deberia mostrar los campers segun estado
-                    case 3:
-                        system("clear")
-                        # TODO: Esto me deberia mostrar los campers segun ruta 
-                    case 4:
-                        system("clear")
-                        # TODO: Esto me deberia mostrar los cmapers segun trainer
-                    case 5:
-                        system("clear")
-                        # TODO: Esto me deberia mostrar los campers segun horario y salon
-                    case 0:
-                        system("clear")
-                        system("exit")
-                        break
-                    case _:
-                        system("clear")
-                        noValid(opc)
-            except ValueError:
-                system("clear")
-                noValid(opc)
-
-
 def search():
     with open("modules/storage/data.json", "r") as f:
         baseDeDatos = json.loads(f.read())
@@ -127,7 +82,7 @@ def search():
 
     print("""     _______________________________________
     |                                       |
-    |           TODOS LOS CAMPERS           |
+    |           LISTA DE CAMPERS            |
     |_______________________________________|""")
     for camp in campersList:
         print(f"""
@@ -244,7 +199,12 @@ def delete():
                     case 1:
                         system("clear")
                         campersList.pop(cod)
-
+                        for sala in salasList:
+                            if (campersList[cod].get("ID") in sala["estudiantes1"]) or (campersList[cod].get("ID") in sala["estudiantes2"]) or (campersList[cod].get("ID") in sala["estudiantes3"]) or (campersList[cod].get("ID") in sala["estudiantes4"]):
+                                sala["estudiantes1"].remove(campersList[cod].get("ID"))
+                                sala["estudiantes2"].remove(campersList[cod].get("ID"))
+                                sala["estudiantes3"].remove(campersList[cod].get("ID"))
+                                sala["estudiantes4"].remove(campersList[cod].get("ID"))
                         with open("modules/storage/data.json", "w") as f:
                             data = json.dumps(baseDeDatos, indent=4)
                             f.write(data)

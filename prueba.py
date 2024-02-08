@@ -1,3 +1,5 @@
-emoji = "🗑️"
+string = "Hola-mariana-te-amo"
+print(type(string))
 
-print(emoji)
+string = string.split("a")
+print(type(string))
