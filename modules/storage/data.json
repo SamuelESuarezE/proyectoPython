@@ -1,23 +1,17 @@
 {
     "campers": [
         {
-            "ID": "1098665605",
-            "Nombres": "Mariana",
-            "Apellidos": "Traslavi\u00f1a Sarmiento",
-            "Direccion": "Villa Renacer",
+            "ID": "12345",
+            "Nombres": "Samuel",
+            "Apellidos": "Suarez",
+            "Direccion": "",
             "Acudiente": {
-                "Nombre": "Elba Sarmiento",
-                "ID": "60263338"
+                "Nombre": "",
+                "ID": ""
             },
             "Celular": "",
             "Telefono_Fijo": "",
-            "Estado": "Aprobado",
-            "fechaInicio": "ayer",
-            "fechaFin": "hoy",
-            "Horario": "2",
-            "Ruta": "NodeJS",
-            "Sala": "Apolo",
-            "Trainer": "Miguel Castro"
+            "Estado": "Inscrito"
         }
     ],
     "trainers": [
@@ -28,12 +22,7 @@
             "Ruta": [
                 "NodeJS"
             ],
-            "Campers": [
-                {
-                    "ID": "1098665605",
-                    "Nombre": "Mariana Traslavi\u00f1a Sarmiento"
-                }
-            ]
+            "Campers": []
         },
         {
             "ID": "789",

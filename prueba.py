@@ -1,9 +1,3 @@
-camper = {
-    "nombre":"samuel"
-}
+emoji = "🗑️"
 
-print(camper)
-
-camper["Ruta"] = "NodeJS"
-
-print(camper)
+print(emoji)

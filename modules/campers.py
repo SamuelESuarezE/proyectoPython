@@ -13,7 +13,7 @@ def menu():
      / __) / _\ ( \/ )(  _ \(  __)(  _ \/ ___)
     ( (__ /    \/ \/ \ ) __/ ) _)  )   /\___ \\
      \___)\_/\_/\_)(_/(__)  (____)(__\_)(____/\n""")
-        print("\t1. Registrar Camper\n\t2. Lista de Campers\n\t3. Editar Camper\n\t4. Eliminar Camper\n\t0. Salir")
+        print("\t1. Registrar Camper 📝\n\t2. Lista de Campers\n\t3. Editar Camper\n\t4. Eliminar Camper 🗑️\n\t0. Salir")
         opc = input()
 
         try:
@@ -61,7 +61,7 @@ def save():
         },
         "Celular": input("Celular: "),
         "Telefono_Fijo": input("Telefono fijo: "),
-        "Estado": "Inscrito"
+        "Estado": "Preinscrito"
     }
     for camp in campersList:
         if info.get("ID") == camp.get("ID"):

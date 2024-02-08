@@ -4,6 +4,8 @@ import modules.campers as campers
 import modules.trainers as trainers
 import modules.rutas as rutas
 import modules.asignacion as asignacion
+import modules.registerPrueba as prueba
+
 while True:
     system("clear")
     print("""
@@ -12,7 +14,7 @@ while True:
      ) D ( ) _)  ) __/_   /    \( (__ /    \ ) D ( ) _) / \/ \ )(( (__(  O )
     (____/(____)(__) (_)  \_/\_/ \___)\_/\_/(____/(____)\_)(_/(__)\___)\__/ 
     """)
-    print("\t1. Campers\n\t2. Trainers\n\t3. Asignacion\n\t4. Rutas de aprendizaje y modulos\n\t5. Planillas academicas\n\t0. Salir")
+    print("\t1. Campers 🚀\n\t2. Trainers 📕\n\t3. Asignacion\n\t4. Rutas de aprendizaje y modulos\n\t5. Registro de prueba de admision\n\t6. Calificar modulo a camper\n\t7. Reportes\n\t0. Salir")
     opc = input()
  
     try:
@@ -32,6 +34,7 @@ while True:
                 rutas.menu()
             case 5:
                 system("clear")
+                prueba.menu()
             case 0:
                 system("clear")
                 break
