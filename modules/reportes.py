@@ -9,12 +9,12 @@ def menu():
         modulosList = baseDeDatos["modulos"]
     while True:
         system("clear")
-        print("""
-         ____ ____ ____  __ ____ ____ ____ ____ 
-        (  _ (  __|  _ \/  (  _ (_  _|  __) ___)
-         )   /) _) ) __(  O )   / )(  ) _)\___ \\
-        (__\_|____|__)  \__(__\_)(__)(____|____/
-        """)
+        print("\33[0;34m"+"""
+     ____ ____ ____  __ ____ ____ ____ ____ 
+    (  _ (  __|  _ \/  (  _ (_  _|  __) ___)
+     )   /) _) ) __(  O )   / )(  ) _)\___ \\
+    (__\_|____|__)  \__(__\_)(__)(____|____/
+        """+"\33[0;m")
         print("\t1. Campers preinscritos.\n\t2. Campers inscritos.\n\t3. Campers aprobados\n\t4. Campers en riesgo.\n\t5. Lista de Trainers\n\t6. Campers y trainers segun ruta de entrenamiento.\n\t7. Ver notas de modulos\n\t0. Salir")
         opc = input()
 

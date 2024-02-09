@@ -9,12 +9,12 @@ with open("modules/storage/data.json", "r") as f:
 
 def menu():
     while True:
-        print("""
+        print("\33[0;34m"+"""
      ____  ____   __   __  __ _  ____  ____  ____ 
     (_  _)(  _ \ / _\ (  )(  ( \(  __)(  _ \/ ___)
       )(   )   //    \ )( /    / ) _)  )   /\___ \\
      (__) (__\_)\_/\_/(__)\_)__)(____)(__\_)(____/
-    """)
+    """+"\33[0;m")
         print("\t1. Registrar Trainer\n\t2. Lista de Trainers\n\t3. Editar Trainer\n\t4. Eliminar Trainer\n\t5. Ver campers de un trainer\n\t0. Salir")
         opc = input()
 
