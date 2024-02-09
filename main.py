@@ -7,7 +7,18 @@ import modules.asignacion as asignacion
 import modules.registerPrueba as prueba
 import modules.calificarPrueba as calificarprueba
 import modules.reportes as reportes
+from time import sleep
 
+for x in range(12):
+    print("""
+                  LOADING DATA...
+    ( -_•)▄︻テحكـ━一"""+ "-"*x*2 + "▶")
+    sleep(0.15)
+    system("clear")
+print("\33[0;32m"+"""
+                  LOADED SUCCESFULLY
+    ( •◡•)▄︻テحكـ━一"""+ "-"*24 + "💥"+"\33[0;m")
+sleep(1)
 system("clear")
 while True:
     print("\33[0;32m"+"""

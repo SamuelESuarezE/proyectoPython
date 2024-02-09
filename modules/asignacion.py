@@ -32,12 +32,12 @@ def menu():
         trainersList = baseDeDatos["trainers"]
         rutasList = baseDeDatos["rutas"]
         salasList = baseDeDatos["salas"]
-    print("""
+    print("\33[0;36m"+"""
       __   ____  __  ___  __ _   __    ___  __  __   __ _ 
      / _\ / ___)(  )/ __)(  ( \ / _\  / __)(  )/  \ (  ( \\
     /    \\\___ \ )(( (_ \/    //    \( (__  )((  O )/    /
     \_/\_/(____/(__)\___/\_)__)\_/\_/ \___)(__)\__/ \_)__)
-    """)
+    """+"\33[0;m")
     while True:
         id = input("Ingrese el documento del camper que desea asignar: ")
         for camper in campersList:
@@ -61,10 +61,13 @@ def menu():
                             camper["Ruta"] = ruta.get("Nombre")
 
                     for sala in salasList:
-                        if (camper.get("ID") in sala["estudiantes1"]) or (camper.get("ID") in sala["estudiantes2"]) or (camper.get("ID") in sala["estudiantes3"]) or (camper.get("ID") in sala["estudiantes4"]):
+                        if (camper.get("ID") in sala["estudiantes1"]):
                             sala["estudiantes1"].remove(camper.get("ID"))
+                        if (camper.get("ID") in sala["estudiantes2"]):
                             sala["estudiantes2"].remove(camper.get("ID"))
+                        if (camper.get("ID") in sala["estudiantes3"]):
                             sala["estudiantes3"].remove(camper.get("ID"))
+                        if (camper.get("ID") in sala["estudiantes4"]):
                             sala["estudiantes4"].remove(camper.get("ID"))
                         else:
                             if sala.get("Codigo") == info.get("CodigoSala"):
@@ -121,6 +124,7 @@ def menu():
 
         print("\n- Si el sistema no permite asignar al camper, es porque el camper no esta registrado.")
         input("Presione enter para continuar...")
+        system("clear")
         break
 
     

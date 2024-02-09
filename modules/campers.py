@@ -6,6 +6,7 @@ with open("modules/storage/data.json", "r") as f:
     baseDeDatos = json.loads(f.read())
     campersList = baseDeDatos["campers"]
     salasList = baseDeDatos["salas"]
+    trainersList = baseDeDatos["trainers"]
 
 def menu():
     while True:
@@ -198,13 +199,23 @@ def delete():
                 match(opc):
                     case 1:
                         system("clear")
-                        campersList.pop(cod)
                         for sala in salasList:
-                            if (campersList[cod].get("ID") in sala["estudiantes1"]) or (campersList[cod].get("ID") in sala["estudiantes2"]) or (campersList[cod].get("ID") in sala["estudiantes3"]) or (campersList[cod].get("ID") in sala["estudiantes4"]):
-                                sala["estudiantes1"].remove(campersList[cod].get("ID"))
-                                sala["estudiantes2"].remove(campersList[cod].get("ID"))
-                                sala["estudiantes3"].remove(campersList[cod].get("ID"))
-                                sala["estudiantes4"].remove(campersList[cod].get("ID"))
+                            if (campersList[cod].get("ID") in sala["estudiantes1"]):
+                                sala["estudiantes1"].remove(id_camper)
+                            if (campersList[cod].get("ID") in sala["estudiantes2"]):
+                                sala["estudiantes2"].remove(id_camper)
+                            if (campersList[cod].get("ID") in sala["estudiantes3"]):
+                                sala["estudiantes3"].remove(id_camper)
+                            if (campersList[cod].get("ID") in sala["estudiantes4"]):
+                                sala["estudiantes4"].remove(id_camper)
+                        for trainer in trainersList:
+                            for i, camper in enumerate(trainer["Campers"]):
+                                if (campersList[cod].get("ID")) == camper.get("ID"):
+                                    trainer["Campers"].pop(i)
+                        campersList.pop(cod)
+
+                        # for trainer in trainersList:
+                        #     if (campersList[cod]).get("ID") in trainer[""]
                         with open("modules/storage/data.json", "w") as f:
                             data = json.dumps(baseDeDatos, indent=4)
                             f.write(data)

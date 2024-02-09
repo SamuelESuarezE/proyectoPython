@@ -18,21 +18,25 @@ def menu():
     """)
     
     id = input("Ingrese el documento del camper para registrar su prueba: ")
-    for camper in campersList:
-        if camper.get("ID") == id:
-            notas = [int(input("Ingrese la nota de la prueba teorica: ")), int(input("Ingrese la nota de la prueba practica: "))]
-            promedio = sum(notas)/2
-                
-            if promedio>60:
-                camper["Estado"] = "Inscrito"
-                print("El camper aprobó la prueba!")
-            else:
-                print("El camper no aprobó la prueba :(")
-    with open("modules/storage/data.json", "w") as f:
-        data = json.dumps(baseDeDatos, indent=4)
-        f.write(data)
+    try:
+        for camper in campersList:
+            if camper.get("ID") == id:
+                notas = [int(input("Ingrese la nota de la prueba teorica: ")), int(input("Ingrese la nota de la prueba practica: "))]
+                promedio = sum(notas)/2
+                    
+                if promedio>60:
+                    camper["Estado"] = "Inscrito"
+                    print("El camper aprobó la prueba!")
+                else:
+                    print("El camper no aprobó la prueba :(")
+        with open("modules/storage/data.json", "w") as f:
+            data = json.dumps(baseDeDatos, indent=4)
+            f.write(data)
+    except ValueError:
+        print("Error: digite notas validas.")
                 
     input("\nPresione enter para continuar...")
+    system("clear")
         
                 
     

@@ -1,19 +1,5 @@
 {
-    "campers": [
-        {
-            "ID": "1127961146",
-            "Nombres": "Samuel Enrique",
-            "Apellidos": "Suarez Estupi\u00f1an",
-            "Direccion": "Conjunto Monteverdi",
-            "Acudiente": {
-                "Nombre": "Jorge Suarez",
-                "ID": "7123721"
-            },
-            "Celular": "3185695249",
-            "Telefono_Fijo": "",
-            "Estado": "Preinscrito"
-        }
-    ],
+    "campers": [],
     "trainers": [
         {
             "ID": "712817281",
@@ -21,7 +7,8 @@
             "Horario": "4",
             "Ruta": [
                 "NetCore"
-            ]
+            ],
+            "Campers": []
         }
     ],
     "rutas": [
@@ -75,7 +62,14 @@
             ],
             "Codigo": "2",
             "Prioridad": "Principal",
-            "Notas": []
+            "Notas": [
+                {
+                    "ID": "1127961146",
+                    "Nombre": "Samuel Enrique Suarez Estupi\u00f1an",
+                    "Total": 91,
+                    "Resultado": "Aprobado"
+                }
+            ]
         }
     ],
     "salas": [
