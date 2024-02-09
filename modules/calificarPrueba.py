@@ -6,12 +6,12 @@ def menu():
         baseDeDatos = json.loads(f.read())
         campersList = baseDeDatos["campers"]
         modulosList = baseDeDatos["modulos"]
-    print("""
+    print("\33[0;36m"+"""
      __ _  __ ____ __  ____    _  _  __ ____  _  _ __    __  ____ 
     (  ( \/  (_  _) _\/ ___)  ( \/ )/  (    \/ )( (  )  /  \/ ___)
     /    (  O ))(/    \___ \  / \/ (  O ) D () \/ ( (_/(  O )___ \\
     \_)__)\__/(__)_/\_(____/  \_)(_/\__(____/\____|____/\__/(____/
-    """)
+    """+"\33[0;m")
     id = input("Ingrese el documento del camper: ")
     print("")
     for modulo in modulosList:

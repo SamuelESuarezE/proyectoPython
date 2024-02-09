@@ -5,7 +5,7 @@ def menu():
     with open("modules/storage/data.json", "r") as f:
         baseDeDatos = json.loads(f.read())
         campersList = baseDeDatos["campers"]
-    print("""
+    print("\33[0;36m"+"""
      ____ ____  _  _ ____ ____  __     ____ ____ 
     (  _ (  _ \/ )( (  __|  _ \/ _\   (    (  __)
      ) __/)   /) \/ () _) ) _ (    \   ) D () _) 
@@ -15,7 +15,7 @@ def menu():
         /    \) D ( \/ \)(\___ \)(  O )    /
         \_/\_(____|_)(_(__|____(__)__/\_)__)
 
-    """)
+    """+"\33[0;m")
     
     id = input("Ingrese el documento del camper para registrar su prueba: ")
     try:
