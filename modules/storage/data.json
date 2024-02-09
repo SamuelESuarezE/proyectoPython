@@ -14,7 +14,16 @@
             "Estado": "Preinscrito"
         }
     ],
-    "trainers": [],
+    "trainers": [
+        {
+            "ID": "712817281",
+            "Nombre": "Miguel Noseque",
+            "Horario": "4",
+            "Ruta": [
+                "NetCore"
+            ]
+        }
+    ],
     "rutas": [
         {
             "Nombre": "NodeJS",

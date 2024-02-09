@@ -7,116 +7,18 @@ import modules.asignacion as asignacion
 import modules.registerPrueba as prueba
 import modules.calificarPrueba as calificarprueba
 import modules.reportes as reportes
-from time import sleep
 
-def carga():
-    system("clear")
-    print("""
-                    LOADING DATA...
-        ▄︻デ══━一💥
-    """)
-    sleep(0.1)
-    system("clear")
-    print("""
-                    LOADING DATA...
-        ▄︻デ══━一 -▶
-    """)
-    sleep(0.1)
-    system("clear")
-    print("""
-                    LOADING DATA...
-        ▄︻デ══━一 ---▶
-    """)
-    sleep(0.1)
-    system("clear")
-
-    print("""
-                    LOADING DATA...
-        ▄︻デ══━一 -----▶
-    """)
-    sleep(0.1)
-    system("clear")
-
-    print("""
-                    LOADING DATA...
-        ▄︻デ══━一 -------▶
-    """)
-    sleep(0.1)
-    system("clear")
-
-    print("""
-                    LOADING DATA...
-        ▄︻デ══━一 ---------▶
-    """)
-    sleep(0.1)
-    system("clear")
-
-    print("""
-                    LOADING DATA...
-        ▄︻デ══━一 -----------▶
-    """)
-    sleep(0.1)
-    system("clear")
-
-    print("""
-                    LOADING DATA...
-        ▄︻デ══━一 -------------▶
-    """)
-    sleep(0.1)
-    system("clear")
-
-    print("""
-                    LOADING DATA...
-        ▄︻デ══━一 ---------------▶
-    """)
-    sleep(0.1)
-    system("clear")
-
-    print("""
-                    LOADING DATA...
-        ▄︻デ══━一 -----------------▶
-    """)
-    sleep(0.1)
-    system("clear")
-
-    print("""
-                    LOADING DATA...
-        ▄︻デ══━一 -------------------▶
-    """)
-    sleep(0.1)
-    system("clear")
-
-    print("""
-                    LOADING DATA...
-        ▄︻デ══━一 ---------------------▶
-    """)
-    sleep(0.1)
-    system("clear")
-
-    print("""
-                    LOADING DATA...
-        ▄︻デ══━一 -----------------------▶
-    """)
-    sleep(0.1)
-    system("clear")
-
-    print("""
-                   LOADED SUCCESFULLY
-        ▄︻デ══━一 ------------------------- 💥
-    """)
-    sleep(1.0)
-carga()
+system("clear")
 while True:
-    system("clear")
-    print("""
+    print("\33[0;32m"+"""
      ____  ____  ____       __    ___   __   ____  ____  _  _  __  ___  __  
     (    \(  __)(  _ \     / _\  / __) / _\ (    \(  __)( \/ )(  )/ __)/  \ 
      ) D ( ) _)  ) __/_   /    \( (__ /    \ ) D ( ) _) / \/ \ )(( (__(  O )
     (____/(____)(__) (_)  \_/\_/ \___)\_/\_/(____/(____)\_)(_/(__)\___)\__/ 
-    """)
-    print("\t1. Campers 🚀\n\t2. Trainers 📕\n\t3. Asignacion\n\t4. Rutas de aprendizaje y modulos\n\t5. Registro de prueba de admision\n\t6. Calificar modulo a camper\n\t7. Reportes\n\t0. Salir")
+    """+"\33[0;m")
+    print("\t1. Campers 🚀\n\t2. Trainers 🖥️\n\t3. Asignacion ✍️\n\t4. Rutas de aprendizaje y modulos 🗺️\n\t5. Registro de prueba de admision 🧾\n\t6. Calificar modulo a camper 📝\n\t7. Reportes 📋\n\t0. Salir 🚪")
     opc = input()
- 
+    
     try:
         opc = int(opc)
         match(opc):
