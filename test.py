@@ -1,12 +1,5 @@
-# campers = ["samuel","suarez"]
+from time import sleep
 
-# camperNoEncontrado = True
-
-# while camperNoEncontrado:
-#     for camper in campers:
-#         if camper == "suarez":
-#             print("Camper encontrado")
-#             camperNoEncontrado = False
-#             break
-#         else:
-#             camperNoEncontrado = True
+print("HOla")
+sleep(3)
+print("HA PASDO UN SEGUNDO")

@@ -11,7 +11,8 @@
             },
             "Celular": "",
             "Telefono_Fijo": "",
-            "Estado": "En riesgo"
+            "Estado": "En riesgo",
+            "Ruta": "None"
         }
     ],
     "trainers": [
@@ -22,7 +23,12 @@
             "Ruta": [
                 "NetCore"
             ],
-            "Campers": []
+            "Campers": [
+                {
+                    "ID": "1127961146",
+                    "Nombre": "Samuel "
+                }
+            ]
         }
     ],
     "rutas": [
@@ -110,7 +116,9 @@
             "estudiantes1": [],
             "estudiantes2": [],
             "estudiantes3": [],
-            "estudiantes4": []
+            "estudiantes4": [
+                "1127961146"
+            ]
         },
         {
             "Nombre": "Artemis",

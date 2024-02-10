@@ -243,7 +243,7 @@ def verPersonasSegunRuta():
                 if cod == ruta.get("Codigo") and (ruta.get("Nombre") in camper.get("Ruta")):
                     print(f"""
             ID: {campersList[x].get("ID")}
-            Nombre: f"{campersList[x].get("Nombres")} {campersList[x].get("Apellidos")}"
+            Nombre: {campersList[x].get("Nombres")} {campersList[x].get("Apellidos")}
             Horario: {campersList[x].get("Horario")}
             Ruta: {campersList[x].get("Ruta")}
             """)
