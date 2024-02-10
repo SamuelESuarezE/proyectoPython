@@ -17,7 +17,7 @@ def menu():
     for modulo in modulosList:
         print(f"{modulo.get('Codigo')}. {modulo.get('Nombre')}")
 
-    moduloID = input("\nIngrese el codigo del modulo que desea calfiicar:")
+    moduloID = input("\nIngrese el codigo del modulo que desea calificar: ")
     notaProyecto = input("Notas Proyecto (separadas por comas ','): ")
     notaProyecto = notaProyecto.split(",")
     notaExamen = input("Notas Examen (separadas por comas ','): ")

@@ -1,6 +1,149 @@
 {
-    "campers": [],
-    "trainers": [],
+    "campers": [
+        {
+            "ID": "1",
+            "Nombres": "Samuel Enrique",
+            "Apellidos": "Suarez Estupi\u00f1an",
+            "Direccion": "Conjunto Monteverdi",
+            "Acudiente": {
+                "Nombre": "Jorge Suarez",
+                "ID": "7213721321"
+            },
+            "Celular": "3185695249",
+            "Telefono_Fijo": "",
+            "Estado": "Filtrado",
+            "Ruta": "NodeJS",
+            "fechaInicio": "9 de enero de 2024",
+            "fechaFin": "20 de noviembre de 2024",
+            "Horario": "2",
+            "Sala": "Artemis",
+            "Trainer": "Miguel Castro"
+        },
+        {
+            "ID": "2",
+            "Nombres": "Mariana",
+            "Apellidos": "Traslavi\u00f1a Sarmiento",
+            "Direccion": "Villa Renacer",
+            "Acudiente": {
+                "Nombre": "Elba Sarmiento",
+                "ID": "21332121312"
+            },
+            "Celular": "213213231",
+            "Telefono_Fijo": "",
+            "Estado": "Preinscrito",
+            "Ruta": null
+        },
+        {
+            "ID": "3",
+            "Nombres": "Felipe",
+            "Apellidos": "Carrillo Pe\u00f1a",
+            "Direccion": "La Cumbre",
+            "Acudiente": {
+                "Nombre": "",
+                "ID": ""
+            },
+            "Celular": "123212141",
+            "Telefono_Fijo": "12321321",
+            "Estado": "Inscrito",
+            "Ruta": null
+        },
+        {
+            "ID": "4",
+            "Nombres": "Maria Juliana",
+            "Apellidos": "Bohorquez Reyes",
+            "Direccion": "Paseo del puente 2",
+            "Acudiente": {
+                "Nombre": "",
+                "ID": ""
+            },
+            "Celular": "",
+            "Telefono_Fijo": "",
+            "Estado": "Aprobado",
+            "Ruta": "Netcore",
+            "fechaInicio": "7 de julio de 2023",
+            "fechaFin": "20 de agosto de 2024",
+            "Horario": "4",
+            "Sala": "Sputnik",
+            "Trainer": "Juan Marino"
+        },
+        {
+            "ID": "5",
+            "Nombres": "Henry",
+            "Apellidos": "Caballero Rodriguez",
+            "Direccion": "Giron",
+            "Acudiente": {
+                "Nombre": "",
+                "ID": ""
+            },
+            "Celular": "1242142114",
+            "Telefono_Fijo": "12312312",
+            "Estado": "En riesgo",
+            "Ruta": null
+        }
+    ],
+    "trainers": [
+        {
+            "ID": "123",
+            "Nombre": "Miguel Castro",
+            "Horario": "123",
+            "Ruta": [
+                "NodeJS",
+                "Java"
+            ],
+            "Campers": [
+                {
+                    "ID": "1",
+                    "Nombre": "Samuel Enrique Suarez Estupi\u00f1an"
+                }
+            ]
+        },
+        {
+            "ID": "124",
+            "Nombre": "Pedro Gomez",
+            "Horario": "12",
+            "Ruta": [
+                "Java"
+            ]
+        },
+        {
+            "ID": "125",
+            "Nombre": "Juan Marino",
+            "Horario": "34",
+            "Ruta": [
+                "Java"
+            ],
+            "Campers": [
+                {
+                    "ID": "4",
+                    "Nombre": "Maria Juliana Bohorquez Reyes"
+                }
+            ]
+        },
+        {
+            "ID": "126",
+            "Nombre": "Camilo Rodriguez",
+            "Horario": "1234",
+            "Ruta": [
+                "Java"
+            ]
+        },
+        {
+            "ID": "127",
+            "Nombre": "Silvia Moreno",
+            "Horario": "34",
+            "Ruta": [
+                "Java"
+            ]
+        },
+        {
+            "ID": "128",
+            "Nombre": "Yolver Pardo",
+            "Horario": "1234",
+            "Ruta": [
+                "Java"
+            ]
+        }
+    ],
     "rutas": [
         {
             "Nombre": "NodeJS",
@@ -43,7 +186,14 @@
             ],
             "Codigo": "1",
             "Prioridad": "Principal",
-            "Notas": []
+            "Notas": [
+                {
+                    "ID": "1",
+                    "Nombre": "Samuel Enrique Suarez Estupi\u00f1an",
+                    "Total": 85,
+                    "Resultado": "Aprobado"
+                }
+            ]
         },
         {
             "Nombre": "Programacion Web (NodeJS)",
@@ -54,7 +204,14 @@
             ],
             "Codigo": "2",
             "Prioridad": "Principal (NodeJS)",
-            "Notas": []
+            "Notas": [
+                {
+                    "ID": "1",
+                    "Nombre": "Samuel Enrique Suarez Estupi\u00f1an",
+                    "Total": 45,
+                    "Resultado": "Reprobado"
+                }
+            ]
         },
         {
             "Nombre": "Bases de Datos (NodeJS)",
@@ -64,7 +221,14 @@
             ],
             "Codigo": "3",
             "Prioridad": "Principal",
-            "Notas": []
+            "Notas": [
+                {
+                    "ID": "1",
+                    "Nombre": "Samuel Enrique Suarez Estupi\u00f1an",
+                    "Total": 41,
+                    "Resultado": "Reprobado"
+                }
+            ]
         },
         {
             "Nombre": "Backend (NodeJS)",
@@ -84,7 +248,14 @@
             ],
             "Codigo": "5",
             "Prioridad": "Principal",
-            "Notas": []
+            "Notas": [
+                {
+                    "ID": "5",
+                    "Nombre": "Henry Caballero Rodriguez",
+                    "Total": 32,
+                    "Resultado": "Reprobado"
+                }
+            ]
         },
         {
             "Nombre": "Bases de Datos (Java)",
@@ -114,7 +285,14 @@
             ],
             "Codigo": "8",
             "Prioridad": "Principal",
-            "Notas": []
+            "Notas": [
+                {
+                    "ID": "4",
+                    "Nombre": "Maria Juliana Bohorquez Reyes",
+                    "Total": 73,
+                    "Resultado": "Aprobado"
+                }
+            ]
         },
         {
             "Nombre": "Backend (Netcore)",
@@ -134,7 +312,9 @@
             "estudiantes1": [],
             "estudiantes2": [],
             "estudiantes3": [],
-            "estudiantes4": []
+            "estudiantes4": [
+                "4"
+            ]
         },
         {
             "Nombre": "Apolo",
@@ -150,7 +330,9 @@
             "Codigo": "3",
             "Capacidad": 33,
             "estudiantes1": [],
-            "estudiantes2": [],
+            "estudiantes2": [
+                "1"
+            ],
             "estudiantes3": [],
             "estudiantes4": []
         }

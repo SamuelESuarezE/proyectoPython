@@ -15,7 +15,7 @@ def menu():
      )   /) _) ) __(  O )   / )(  ) _)\___ \\
     (__\_|____|__)  \__(__\_)(__)(____|____/
         """+"\33[0;m")
-        print("\t1. Campers preinscritos.\n\t2. Campers inscritos.\n\t3. Campers aprobados\n\t4. Campers en riesgo.\n\t5. Lista de Trainers\n\t6. Campers y trainers segun ruta de entrenamiento.\n\t7. Ver notas de modulos\n\t0. Salir")
+        print("\t1. Campers preinscritos.\n\t2. Campers inscritos.\n\t3. Campers aprobados\n\t4. Campers en riesgo.\n\t5. Campers filtrados\n\t6. Lista de Trainers\n\t7. Campers y trainers segun ruta de entrenamiento.\n\t8. Ver notas de modulos\n\t0. Salir")
         opc = input()
 
         try:
@@ -35,11 +35,14 @@ def menu():
                     campersRiesgo()
                 case 5:
                     system("clear")
-                    searchTrainers()
+                    campersFiltrados()
                 case 6:
                     system("clear")
-                    verPersonasSegunRuta()
+                    searchTrainers()
                 case 7:
+                    system("clear")
+                    verPersonasSegunRuta()
+                case 8:
                     system("clear")
                     ver_notas()
                 case 0:
@@ -51,6 +54,35 @@ def menu():
         except ValueError:
             system("clear")
             noValid(opc)
+def campersFiltrados():
+    with open("modules/storage/data.json", "r") as f:
+        baseDeDatos = json.loads(f.read())
+        campersList = baseDeDatos["campers"]
+    print("""     _______________________________________
+    |                                       |
+    |           CAMPERS FILTRADOS           |
+    |_______________________________________|
+    """)
+    for camp in campersList:
+        if camp.get("Estado") == "Filtrado":
+            print(f"""
+            ID: {camp.get("ID")}
+            Nombres: {camp.get("Nombres")}
+            Apellidos: {camp.get("Apellidos")}
+            Direccion: {camp.get("Direccion")}
+            Acudiente: {camp.get("Acudiente").get("Nombre")}
+            ID Acudiente: {camp.get("Acudiente").get("ID")}
+            Celular: {camp.get("Celular")}
+            Telefono fijo: {camp.get("Telefono_Fijo")}
+            Estado: {camp.get("Estado")}
+            Ruta: {camp.get("Ruta")}
+            Sala: {camp.get("Sala")}
+            Trainer: {camp.get("Trainer")}
+            Horario: {camp.get("Horario")}
+            """)
+    
+    input("Presione enter para continuar...")
+
 def campersAprobados():
     with open("modules/storage/data.json", "r") as f:
         baseDeDatos = json.loads(f.read())

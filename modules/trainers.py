@@ -103,7 +103,7 @@ def mostrarRutas():
         baseDeDatos = json.loads(f.read())
         rutasList = baseDeDatos["rutas"]
     
-    print("Ruta:")
+    print("Ruta: Si son varias separelas por comas (',')")
     for ruta in rutasList:
         print(f"\t{ruta.get('Codigo')}. {ruta.get('Nombre')}")
     rutaSeleccionada = input()
@@ -117,6 +117,9 @@ def mostrarRutas():
     return rutasGuardadas
 
 def search():
+    with open("modules/storage/data.json", "r") as f:
+        baseDeDatos = json.loads(f.read())
+        trainersList = baseDeDatos["trainers"]
     system("clear")
     print("""     _______________________________________
     |                                       |
