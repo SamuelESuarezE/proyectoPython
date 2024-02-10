@@ -1,56 +1,34 @@
 {
-    "campers": [
-        {
-            "ID": "1127961146",
-            "Nombres": "Samuel",
-            "Apellidos": "",
-            "Direccion": "",
-            "Acudiente": {
-                "Nombre": "",
-                "ID": ""
-            },
-            "Celular": "",
-            "Telefono_Fijo": "",
-            "Estado": "En riesgo",
-            "Ruta": "None"
-        }
-    ],
-    "trainers": [
-        {
-            "ID": "712817281",
-            "Nombre": "Miguel Noseque",
-            "Horario": "4",
-            "Ruta": [
-                "NetCore"
-            ],
-            "Campers": [
-                {
-                    "ID": "1127961146",
-                    "Nombre": "Samuel "
-                }
-            ]
-        }
-    ],
+    "campers": [],
+    "trainers": [],
     "rutas": [
         {
             "Nombre": "NodeJS",
             "Modulos": [
                 "Fundamentos de Programacion",
-                "Desarrollo Web"
+                "Programacion Web (NodeJS)",
+                "Bases de Datos (NodeJS)",
+                "Backend (NodeJS)"
             ],
             "Codigo": "1"
         },
         {
             "Nombre": "Java",
             "Modulos": [
-                "Fundamentos de Programacion"
+                "Fundamentos de Programacion",
+                "Programacion Formal (Java)",
+                "Bases de Datos (Java)",
+                "Backend (Java)"
             ],
             "Codigo": "2"
         },
         {
-            "Nombre": "NetCore",
+            "Nombre": "Netcore",
             "Modulos": [
-                "Fundamentos de Programacion"
+                "Fundamentos de Programacion",
+                "Bases de Datos (Java)",
+                "Programacion Formal (NetCore)",
+                "Backend (Netcore)"
             ],
             "Codigo": "3"
         }
@@ -59,44 +37,93 @@
         {
             "Nombre": "Fundamentos de Programacion",
             "Temario": [
-                "Python",
-                " Variables",
-                " Condicionales",
-                " Ciclos",
-                " Funciones",
-                " Modulos"
+                "Introduccion a la algoritmia",
+                " PSeint",
+                " Python"
             ],
             "Codigo": "1",
             "Prioridad": "Principal",
-            "Notas": [
-                {
-                    "ID": "1127961146",
-                    "Nombre": "Samuel ",
-                    "Total": 28,
-                    "Resultado": "Reprobado"
-                }
-            ]
+            "Notas": []
         },
         {
-            "Nombre": "Desarrollo Web",
+            "Nombre": "Programacion Web (NodeJS)",
             "Temario": [
                 "HTML",
                 "CSS",
-                "Flexbox",
-                "Grid",
-                "React",
-                "Tailwind"
+                "Bootstrap"
             ],
             "Codigo": "2",
+            "Prioridad": "Principal (NodeJS)",
+            "Notas": []
+        },
+        {
+            "Nombre": "Bases de Datos (NodeJS)",
+            "Temario": [
+                "MongoDB",
+                "MySQL"
+            ],
+            "Codigo": "3",
             "Prioridad": "Principal",
-            "Notas": [
-                {
-                    "ID": "1127961146",
-                    "Nombre": "Samuel Enrique Suarez Estupi\u00f1an",
-                    "Total": 91,
-                    "Resultado": "Aprobado"
-                }
-            ]
+            "Notas": []
+        },
+        {
+            "Nombre": "Backend (NodeJS)",
+            "Temario": [
+                "NodeJS",
+                " Express"
+            ],
+            "Codigo": "4",
+            "Prioridad": "Principal",
+            "Notas": []
+        },
+        {
+            "Nombre": "Programacion Formal (Java)",
+            "Temario": [
+                "Java",
+                "C#"
+            ],
+            "Codigo": "5",
+            "Prioridad": "Principal",
+            "Notas": []
+        },
+        {
+            "Nombre": "Bases de Datos (Java)",
+            "Temario": [
+                "PostgreSQL",
+                " MySQL"
+            ],
+            "Codigo": "6",
+            "Prioridad": "Principal",
+            "Notas": []
+        },
+        {
+            "Nombre": "Backend (Java)",
+            "Temario": [
+                "Spring Boot"
+            ],
+            "Codigo": "7",
+            "Prioridad": "Principal",
+            "Notas": []
+        },
+        {
+            "Nombre": "Programacion Formal (NetCore)",
+            "Temario": [
+                "C#",
+                "Java",
+                "Entity Framework Core"
+            ],
+            "Codigo": "8",
+            "Prioridad": "Principal",
+            "Notas": []
+        },
+        {
+            "Nombre": "Backend (Netcore)",
+            "Temario": [
+                "Netcore"
+            ],
+            "Codigo": "9",
+            "Prioridad": "Principal",
+            "Notas": []
         }
     ],
     "salas": [
@@ -116,9 +143,7 @@
             "estudiantes1": [],
             "estudiantes2": [],
             "estudiantes3": [],
-            "estudiantes4": [
-                "1127961146"
-            ]
+            "estudiantes4": []
         },
         {
             "Nombre": "Artemis",

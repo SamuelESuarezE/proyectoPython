@@ -178,7 +178,8 @@ def ver_notas():
         print(f"{modulo.get('Codigo')}. {modulo.get('Nombre')}")
     print("")
     codigo_modulo = input("Ingrese el codigo del modulo que desea ver las notas: ")
-
+    aprobados = 0
+    noAprobado = 0
     for modulo in modulosList:
         if modulo.get("Codigo") == codigo_modulo:
             for camper in modulo.get("Notas"):
@@ -187,8 +188,12 @@ def ver_notas():
         Nombre: {camper.get('Nombre')}
         Total: {camper.get('Total')}
         Resultado: {camper.get('Resultado')}
-        """)
-    
+        """)    
+                if camper.get('Resultado') == "Aprobado":
+                    aprobados+=1
+                if camper.get('Resultado') == "No aprobado":
+                    noAprobado+=1
+    print(f"{aprobados} aprobaron {noAprobado} no aprobaron.")
     input("Presione enter para continuar...")
     system("clear")
 
