@@ -238,7 +238,7 @@ def verPersonasSegunRuta():
         |_______________________________________|
         """)
   
-        for x, camper in enumerate(trainersList):
+        for x, camper in enumerate(campersList):
             for ruta in rutasList:
                 if cod == ruta.get("Codigo") and (ruta.get("Nombre") in camper.get("Ruta")):
                     print(f"""
@@ -249,3 +249,4 @@ def verPersonasSegunRuta():
             """)
         
         input("Presione enter para continuar...")
+        system("clear")
