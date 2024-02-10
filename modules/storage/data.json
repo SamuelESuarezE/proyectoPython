@@ -1,5 +1,19 @@
 {
-    "campers": [],
+    "campers": [
+        {
+            "ID": "1127961146",
+            "Nombres": "Samuel",
+            "Apellidos": "",
+            "Direccion": "",
+            "Acudiente": {
+                "Nombre": "",
+                "ID": ""
+            },
+            "Celular": "",
+            "Telefono_Fijo": "",
+            "Estado": "En riesgo"
+        }
+    ],
     "trainers": [
         {
             "ID": "712817281",
@@ -48,7 +62,14 @@
             ],
             "Codigo": "1",
             "Prioridad": "Principal",
-            "Notas": []
+            "Notas": [
+                {
+                    "ID": "1127961146",
+                    "Nombre": "Samuel ",
+                    "Total": 28,
+                    "Resultado": "Reprobado"
+                }
+            ]
         },
         {
             "Nombre": "Desarrollo Web",

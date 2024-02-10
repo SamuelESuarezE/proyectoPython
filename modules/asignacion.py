@@ -42,7 +42,7 @@ def menu():
         id = input("Ingrese el documento del camper que desea asignar: ")
         for camper in campersList:
             if camper.get("ID") == id:
-                if camper["Estado"] == "Aprobado":
+                if camper["Estado"] == "Aprobado" or camper["Estado"] == "En riesgo":
                     info = {
                         "CodigoRuta": mostrarRutas(),
                         "CodigoSala": input("Digite el codigo de la sala:\n\t1. Sputnik\n\t2. Apolo\n\t3. Artemis\n"),

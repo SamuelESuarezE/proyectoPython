@@ -45,7 +45,7 @@ def menu():
                                 break
                         else:
                             resultado = "Reprobado"
-                            if camper["Estado"] == "Aprobado":
+                            if camper["Estado"] == "Aprobado" or camper["Estado"] == "Inscrito":
                                 camper["Estado"] = "En riesgo"
                             elif camper["Estado"] == "En riesgo":
                                 camper["Estado"] = "Filtrado"
