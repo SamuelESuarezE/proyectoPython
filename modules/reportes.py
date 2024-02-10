@@ -223,7 +223,7 @@ def ver_notas():
         """)    
                 if camper.get('Resultado') == "Aprobado":
                     aprobados+=1
-                if camper.get('Resultado') == "No aprobado":
+                if camper.get('Resultado') == "Reprobado":
                     noAprobado+=1
     print(f"{aprobados} aprobaron {noAprobado} no aprobaron.")
     input("Presione enter para continuar...")

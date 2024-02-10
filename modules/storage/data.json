@@ -31,7 +31,7 @@
             "Celular": "213213231",
             "Telefono_Fijo": "",
             "Estado": "Preinscrito",
-            "Ruta": null
+            "Ruta": "Ninguna"
         },
         {
             "ID": "3",
@@ -45,7 +45,7 @@
             "Celular": "123212141",
             "Telefono_Fijo": "12321321",
             "Estado": "Inscrito",
-            "Ruta": null
+            "Ruta": "Ninguna"
         },
         {
             "ID": "4",
@@ -78,7 +78,7 @@
             "Celular": "1242142114",
             "Telefono_Fijo": "12312312",
             "Estado": "En riesgo",
-            "Ruta": null
+            "Ruta": "Ninguna"
         }
     ],
     "trainers": [

@@ -64,7 +64,7 @@ def save():
         "Celular": input("Celular: "),
         "Telefono_Fijo": input("Telefono fijo: "),
         "Estado": "Preinscrito",
-        "Ruta": None
+        "Ruta": "Ninguna"
     }
     for camp in campersList:
         if info.get("ID") == camp.get("ID"):
